@@ -1207,6 +1207,74 @@ const initHeroVideo = () => {
 };
 
 /* ----------------------------------------------------------------
+   TREATMENTS MODAL
+---------------------------------------------------------------- */
+const initTreatmentsModal = () => {
+  const modal     = $('#treatments-modal');
+  const openBtn   = $('.treatments-modal-open');
+  const closeBtn  = modal?.querySelector('.treatments-modal-close');
+  const backdrop  = modal?.querySelector('.treatments-modal-backdrop');
+  const ctaLinks  = modal ? $$('.treatments-modal-cta-link', modal) : [];
+
+  if (!modal || !openBtn) return;
+
+  /* ── Abre ── */
+  const openModal = () => {
+    modal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
+    announceToSR('Modal de tratamentos aberto. Use Tab para navegar, Escape para fechar.');
+  };
+
+  /* ── Fecha ── */
+  const closeModal = () => {
+    modal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+    openBtn.focus();
+    announceToSR('Modal de tratamentos fechado.');
+  };
+
+  openBtn.addEventListener('click', openModal);
+  closeBtn?.addEventListener('click', closeModal);
+  backdrop?.addEventListener('click', closeModal);
+
+  /* Fechar links do CTA dentro do modal */
+  ctaLinks.forEach(link => {
+    link.addEventListener('click', () => closeModal());
+  });
+
+  /* Escape */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.hasAttribute('hidden')) {
+      closeModal();
+    }
+  });
+
+  /* Trap de foco */
+  modal.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab' || modal.hasAttribute('hidden')) return;
+
+    const focusable = [
+      ...modal.querySelectorAll(
+        'button:not([disabled]), a[href], [tabindex="0"], input, select'
+      ),
+    ].filter(el => !el.closest('[hidden]'));
+
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last  = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+};
+
+/* ----------------------------------------------------------------
    INIT — Ponto de entrada principal
 ---------------------------------------------------------------- */
 const init = () => {
