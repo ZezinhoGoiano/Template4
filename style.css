@@ -75,11 +75,11 @@
   /* Header */
   --header-h: 80px;
 
-  /* Z-index scale */
+    /* Z-index scale */
   --z-base:     1;
   --z-dropdown: 100;
-  --z-modal:    200;
-  --z-toolbar:  300;
+  --z-modal:    300;
+  --z-toolbar:  200;
   --z-toast:    400;
 }
 
