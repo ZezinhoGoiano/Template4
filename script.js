@@ -1210,6 +1210,10 @@ const initHeroVideo = () => {
   /* ----------------------------------------------------------------
    TREATMENTS MODAL
 ---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   TREATMENTS MODAL (Accordion + CTA)
+---------------------------------------------------------------- */
 const initTreatmentsModal = () => {
   const modal    = $('#treatments-modal');
   const openBtn  = $('.treatments-modal-open');
@@ -1227,13 +1231,12 @@ const initTreatmentsModal = () => {
     announceToSR('Modal de tratamentos aberto.');
   };
 
-  /* ── Fecha e colapsa todos os cards ── */
+  /* ── Fecha e colapsa tudo ── */
   const closeModal = () => {
     modal.setAttribute('hidden', '');
     document.body.style.overflow = '';
     document.body.classList.remove('modal-open');
 
-    /* Colapsa todos os cards ao fechar */
     modal.querySelectorAll('.treatment-card--modal.is-expanded').forEach(c => {
       collapseCard(c);
     });
@@ -1242,35 +1245,31 @@ const initTreatmentsModal = () => {
     announceToSR('Modal de tratamentos fechado.');
   };
 
-  /* ── Expande um card ── */
-  const expandCard = (card) => {
-    card.classList.add('is-expanded');
-    card.setAttribute('aria-expanded', 'true');
-  };
+  /* ── Expande/Colapsa ── */
+  const expandCard  = (card) => { card.classList.add('is-expanded'); card.setAttribute('aria-expanded', 'true'); };
+  const collapseCard = (card) => { card.classList.remove('is-expanded'); card.setAttribute('aria-expanded', 'false'); };
 
-  /* ── Colapsa um card ── */
-  const collapseCard = (card) => {
-    card.classList.remove('is-expanded');
-    card.setAttribute('aria-expanded', 'false');
-  };
-
-  /* ── Toggle de um card ── */
   const toggleCard = (card) => {
     const isExpanded = card.classList.contains('is-expanded');
-
-    /* Colapsa todos os outros primeiro (accordion) */
     modal.querySelectorAll('.treatment-card--modal').forEach(c => {
       if (c !== card) collapseCard(c);
     });
-
-    /* Toggle do atual */
     isExpanded ? collapseCard(card) : expandCard(card);
+    announceToSR(isExpanded ? 'Recolhido' : 'Expandido');
+  };
 
-    announceToSR(
-      isExpanded
-        ? `${card.querySelector('.treatment-card-title')?.textContent} recolhido`
-        : `${card.querySelector('.treatment-card-title')?.textContent} expandido`
-    );
+  /* ── Rola até o CTA ── */
+  const goToCTA = () => {
+    closeModal();
+    setTimeout(() => {
+      const ctaSection = document.querySelector('#cta');
+      if (!ctaSection) return;
+      const headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10) || 80;
+      window.scrollTo({
+        top: ctaSection.getBoundingClientRect().top + window.scrollY - headerH,
+        behavior: STATE.reducedMotion ? 'auto' : 'smooth',
+      });
+    }, 350);
   };
 
   /* ── Eventos básicos ── */
@@ -1278,39 +1277,26 @@ const initTreatmentsModal = () => {
   closeBtn?.addEventListener('click', closeModal);
   backdrop?.addEventListener('click', closeModal);
 
-  /* ── Escape ── */
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
   });
 
-  /* ── Event delegation no grid ──
-     Clique na linha do card → expande/colapsa (mobile)
-     Clique no link "Agendar" → fecha modal + rola ao CTA       */
+  /* ── Event Delegation no Grid (A mágica acontece aqui) ── */
   const grid = modal.querySelector('.treatments-modal-grid');
 
   if (grid) {
     grid.addEventListener('click', (e) => {
 
-      /* Clique no link "Agendar" — fecha modal e vai ao CTA */
+      // 1. Clique no link "Agendar" -> Fecha e rola
       const ctaLink = e.target.closest('.treatments-modal-cta-link');
       if (ctaLink) {
         e.preventDefault();
-        closeModal();
-        setTimeout(() => {
-          const ctaSection = document.querySelector('#cta');
-          if (!ctaSection) return;
-          const headerH = parseInt(
-            getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10
-          ) || 80;
-          window.scrollTo({
-            top: ctaSection.getBoundingClientRect().top + window.scrollY - headerH,
-            behavior: STATE.reducedMotion ? 'auto' : 'smooth',
-          });
-        }, 350);
+        e.stopPropagation(); // Impede que outros listeners interfiram
+        goToCTA();
         return;
       }
 
-      /* Clique no card (mobile) → accordion */
+      // 2. Clique no card (título/ícone/seta) -> Accordion (apenas mobile)
       if (window.innerWidth > 600) return;
 
       const card = e.target.closest('.treatment-card--modal');
@@ -1319,7 +1305,7 @@ const initTreatmentsModal = () => {
       toggleCard(card);
     });
 
-    /* Teclado */
+    // Suporte a teclado (Enter/Space)
     grid.addEventListener('keydown', (e) => {
       if (e.key !== 'Enter' && e.key !== ' ') return;
       if (window.innerWidth > 600) return;
@@ -1331,6 +1317,18 @@ const initTreatmentsModal = () => {
       toggleCard(card);
     });
   }
+
+  /* ── Trap de foco ── */
+  modal.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab' || modal.hasAttribute('hidden')) return;
+    const focusable = [...modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])')].filter(el => !el.hasAttribute('disabled'));
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last  = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+};
 
   /* ── Links do footer do modal ── */
   modal.querySelectorAll('.treatments-modal-footer .treatments-modal-cta-link').forEach(link => {
