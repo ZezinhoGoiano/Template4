@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- ============================================================
+       META & SEO
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Éclat Esthétique | Clínica de Estética Premium</title>
+
+  <meta name="description"
+        content="Éclat Esthétique — Clínica de estética de alto padrão especializada em harmonização facial, botox, preenchimentos, laser e tratamentos premium. Agende sua avaliação." />
+  <meta name="keywords"
+        content="clínica de estética, harmonização facial, botox, preenchimento facial, laser, bioestimuladores, rejuvenescimento, peelings, limpeza de pele, estética premium" />
+  <meta name="author" content="Éclat Esthétique" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://eclatesthetique.com.br/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://eclatesthetique.com.br/" />
+  <meta property="og:title"       content="Éclat Esthétique | Clínica de Estética Premium" />
+  <meta property="og:description" content="Sua beleza, elevada à sua melhor versão. Clínica de estética de alto padrão com 16 anos de experiência e +12.000 procedimentos realizados." />
+  <meta property="og:image"       content="https://eclatesthetique.com.br/og-image.jpg" />
+  <meta property="og:locale"      content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Éclat Esthétique | Clínica de Estética Premium" />
+  <meta name="twitter:description" content="Sua beleza, elevada à sua melhor versão." />
+  <meta name="twitter:image"       content="https://eclatesthetique.com.br/og-image.jpg" />
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%23C89B7B'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-size='14' font-family='serif' fill='white'>É</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Éclat Esthétique",
+    "description": "Clínica de estética de alto padrão especializada em harmonização facial e tratamentos premium.",
+    "url": "https://eclatesthetique.com.br",
+    "telephone": "+55-11-9999-9999",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Oscar Freire, 1000",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "postalCode": "01426-001",
+      "addressCountry": "BR"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "2847"
+    }
+  }
+  </script>
+</head>
+
+<body class="preload" data-theme="default">
+
+  <!-- ============================================================
+       ACCESSIBILITY TOOLBAR — Barra flutuante de acessibilidade
+  ============================================================ -->
+  <aside class="a11y-toolbar" role="complementary" aria-label="Ferramentas de acessibilidade">
+    <button class="a11y-toggle" aria-label="Abrir ferramentas de acessibilidade" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/>
+      </svg>
+    </button>
+    <div class="a11y-panel" role="dialog" aria-label="Opções de acessibilidade" hidden>
+      <p class="a11y-title">Acessibilidade</p>
+
+      <button class="a11y-btn" data-action="contrast" aria-pressed="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20" opacity=".3"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+        Alto Contraste
+      </button>
+
+      <button class="a11y-btn" data-action="font-increase" aria-label="Aumentar tamanho da fonte">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><text x="2" y="18" font-size="14" fill="currentColor">A+</text></svg>
+        Aumentar Fonte
+      </button>
+
+      <button class="a11y-btn" data-action="font-decrease" aria-label="Diminuir tamanho da fonte">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><text x="2" y="18" font-size="11" fill="currentColor">A-</text></svg>
+        Diminuir Fonte
+      </button>
+
+      <button class="a11y-btn" data-action="reduce-motion" aria-pressed="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        Reduzir Animações
+      </button>
+
+      <button class="a11y-btn" data-action="no-parallax" aria-pressed="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+        Desativar Parallax
+      </button>
+
+      <button class="a11y-btn a11y-reset" data-action="reset">
+        Restaurar Padrão
+      </button>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header class="header" role="banner" id="header">
+    <div class="header-inner container">
+
+      <!-- Logo -->
+      <a href="#hero" class="logo" aria-label="Éclat Esthétique — Página inicial">
+        <span class="logo-symbol" aria-hidden="true">É</span>
+        <span class="logo-text">
+          <strong>Éclat</strong>
+          <em>Esthétique</em>
+        </span>
+      </a>
+
+      <!-- Nav Desktop -->
+      <nav class="nav" role="navigation" aria-label="Menu principal">
+        <ul class="nav-list" role="list">
+          <li><a href="#tratamentos" class="nav-link">Tratamentos</a></li>
+          <li><a href="#especialistas" class="nav-link">Especialistas</a></li>
+          <li><a href="#resultados" class="nav-link">Resultados</a></li>
+          <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Header -->
+      <a href="#cta" class="btn btn-primary btn-sm header-cta" aria-label="Agendar avaliação gratuita">
+        Agendar Avaliação
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="nav-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="hamburger" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+    </div>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile" hidden>
+      <ul class="mobile-nav-list" role="list">
+        <li><a href="#tratamentos" class="mobile-nav-link">Tratamentos</a></li>
+        <li><a href="#especialistas" class="mobile-nav-link">Especialistas</a></li>
+        <li><a href="#resultados" class="mobile-nav-link">Resultados</a></li>
+        <li><a href="#depoimentos" class="mobile-nav-link">Depoimentos</a></li>
+        <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+        <li><a href="#cta" class="btn btn-primary mobile-nav-cta">Agendar Avaliação</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         HERO — Full Screen
+    ============================================================ -->
+    <section class="hero" id="hero" aria-label="Seção principal — Éclat Esthétique">
+
+      <!-- Video Background — substitua o src pelo vídeo real -->
+      <div class="hero-video-wrapper" aria-hidden="true">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="none"
+          poster="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&q=80"
+          aria-hidden="true">
+          <!-- 
+            SUBSTITUIR: Adicione aqui o vídeo real da clínica.
+            Exemplo: <source src="videos/hero-clinic.mp4" type="video/mp4" />
+          -->
+          <source src="" type="video/mp4" />
+        </video>
+        <!-- Overlay em camadas para efeito premium -->
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-overlay-gradient" aria-hidden="true"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="hero-content container" data-parallax="0.3">
+        <div class="hero-badge animate-fade-up" aria-label="Indicador de qualidade">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Clínica Premium • São Paulo
+        </div>
+
+        <h1 class="hero-title animate-fade-up delay-1">
+          Sua beleza,<br />
+          <em>elevada à sua</em><br />
+          melhor versão.
+        </h1>
+
+        <p class="hero-subtitle animate-fade-up delay-2">
+          Tratamentos personalizados com tecnologia de ponta,<br class="br-desktop" />
+          conduzidos por especialistas dedicados à sua transformação.
+        </p>
+
+        <div class="hero-actions animate-fade-up delay-3">
+          <a href="#cta" class="btn btn-primary btn-lg">
+            <span>Agendar Avaliação</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#tratamentos" class="btn btn-ghost btn-lg">
+            Conhecer Tratamentos
+          </a>
+        </div>
+
+        <!-- Social proof mini -->
+        <div class="hero-proof animate-fade-up delay-4">
+          <div class="hero-proof-avatars" aria-hidden="true">
+            <!-- Avatares placeholder — substitua pelas fotos reais -->
+            <span class="avatar-placeholder" style="background:#C89B7B20; color:#C89B7B;">M</span>
+            <span class="avatar-placeholder" style="background:#A67C5220; color:#A67C52;">J</span>
+            <span class="avatar-placeholder" style="background:#C89B7B30; color:#C89B7B;">A</span>
+            <span class="avatar-placeholder" style="background:#A67C5230; color:#A67C52;">P</span>
+          </div>
+          <div class="hero-proof-text">
+            <div class="stars" aria-label="Avaliação 4.9 de 5 estrelas">
+              ★★★★★
+            </div>
+            <span>+2.800 pacientes satisfeitas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span class="scroll-label">Scroll</span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         RIBBON — Faixa de credenciais
+    ============================================================ -->
+    <div class="ribbon" aria-label="Credenciais da clínica" role="complementary">
+      <div class="ribbon-inner container">
+        <div class="ribbon-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Procedimentos Certificados
+        </div>
+        <div class="ribbon-divider" aria-hidden="true"></div>
+        <div class="ribbon-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          16 Anos de Experiência
+        </div>
+        <div class="ribbon-divider" aria-hidden="true"></div>
+        <div class="ribbon-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          +12.000 Procedimentos
+        </div>
+        <div class="ribbon-divider" aria-hidden="true"></div>
+        <div class="ribbon-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Avaliação 4,9★
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         TRATAMENTOS
+    ============================================================ -->
+    <section class="section treatments" id="tratamentos" aria-label="Nossos Tratamentos">
+      <div class="container">
+
+        <header class="section-header animate-on-scroll">
+          <span class="section-label">O que oferecemos</span>
+          <h2 class="section-title">Tratamentos<br /><em>sob medida para você</em></h2>
+          <p class="section-desc">Cada procedimento é cuidadosamente planejado para respeitar sua identidade e realçar sua beleza natural, com segurança e resultados duradouros.</p>
+        </header>
+
+        <div class="treatments-grid">
+
+          <!-- Card 1 -->
+          <article class="treatment-card animate-on-scroll" tabindex="0" aria-label="Harmonização Facial">
+            <div class="treatment-card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+              </svg>
+            </div>
+            <div class="treatment-card-number" aria-hidden="true">01</div>
+            <h3 class="treatment-card-title">Harmonização Facial</h3>
+            <p class="treatment-card-desc">Equilíbrio e proporção perfeitos, ressaltando sua beleza com naturalidade e elegância através de técnicas avançadas.</p>
+            <a href="#cta" class="treatment-card-link" aria-label="Saber mais sobre Harmonização Facial">
+              Saiba mais
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="treatment-card animate-on-scroll" tabindex="0" aria-label="Botox e Toxina Botulínica">
+            <div class="treatment-card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M12 2l3 6.5L22 10l-5 4.5 1.5 7L12 18l-6.5 3.5L7 14.5 2 10l7-1.5z"/>
+              </svg>
+            </div>
+            <div class="treatment-card-number" aria-hidden="true">02</div>
+            <h3 class="treatment-card-title">Botox & Toxina</h3>
+            <p class="treatment-card-desc">Suavização de linhas de expressão com resultados naturais e duradouros, aplicado por especialistas certificados.</p>
+            <a href="#cta" class="treatment-card-link" aria-label="Saber mais sobre Botox">
+              Saiba mais
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="treatment-card animate-on-scroll" tabindex="0" aria-label="Preenchimento Facial">
+            <div class="treatment-card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <div class="treatment-card-number" aria-hidden="true">03</div>
+            <h3 class="treatment-card-title">Preenchimento Facial</h3>
+            <p class="treatment-card-desc">Restauração de volume e contornos com ácido hialurônico premium para resultados imediatos e naturais.</p>
+            <a href="#cta" class="treatment-card-link" aria-label="Saber mais sobre Preenchimento Facial">
+              Saiba mais
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="treatment-card animate-on-scroll" tabindex="0" aria-label="Bioestimuladores de Colágeno">
+            <div class="treatment-card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M12 22V12M12 12C12 7 17 5 17 5s-5 2-5 7M12 12C12 7 7 5 7 5s5 2 5 7"/>
+                <circle cx="12" cy="4" r="2"/>
+              </svg>
+            </div>
+            <div class="treatment-card-number" aria-hidden="true">04</div>
+            <h3 class="treatment-card-title">Bioestimuladores</h3>
+            <p class="treatment-card-desc">Estimulação natural da produção de colágeno para uma pele mais firme, jovem e radiante de dentro para fora.</p>
+            <a href="#cta" class="treatment-card-link" aria-label="Saber mais sobre Bioestimuladores">
+              Saiba mais
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="treatment-card animate-on-scroll" tabindex="0" aria-label="Laser e Fototerapia">
+            <div class="treatment-card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+              </svg>
+            </div>
+            <div class="treatment-card-number" aria-hidden="true">05</div>
+            <h3 class="treatment-card-title">Laser & Fototerapia</h3>
+            <p class="treatment-card-desc">Tecnologia de ponta para manchas, textura irregular, pelos e rejuvenescimento com mínimo desconforto.</p>
+            <a href="#cta" class="treatment-card-link" aria-label="Saber mais sobre Laser">
+              Saiba mais
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="treatment-card animate-on-scroll" tabindex="0" aria-label="Peelings Profissionais">
+            <div class="treatment-card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+              </svg>
+            </div>
+            <div class="treatment-card-number" aria-hidden="true">06</div>
+            <h3 class="treatment-card-title">Peelings Profissionais</h3>
+            <p class="treatment-card-desc">Renovação celular profunda para uma pele mais luminosa, uniforme e visivelmente mais jovem com protocolos customizados.</p>
+            <a href="#cta" class="treatment-card-link" aria-label="Saber mais sobre Peelings">
+              Saiba mais
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Card 7 -->
+          <article class="treatment-card animate-on-scroll" tabindex="0" aria-label="Limpeza de Pele Profunda">
+            <div class="treatment-card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <div class="treatment-card-number" aria-hidden="true">07</div>
+            <h3 class="treatment-card-title">Limpeza de Pele</h3>
+            <p class="treatment-card-desc">Protocolo completo de limpeza profunda, extração e hidratação para uma pele purificada e radiante.</p>
+            <a href="#cta" class="treatment-card-link" aria-label="Saber mais sobre Limpeza de Pele">
+              Saiba mais
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Card 8 -->
+          <article class="treatment-card animate-on-scroll" tabindex="0" aria-label="Drenagem Linfática">
+            <div class="treatment-card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <div class="treatment-card-number" aria-hidden="true">08</div>
+            <h3 class="treatment-card-title">Drenagem Linfática</h3>
+            <p class="treatment-card-desc">Técnica especializada para redução de inchaço, celulite e melhora da circulação com toques suaves e precisos.</p>
+            <a href="#cta" class="treatment-card-link" aria-label="Saber mais sobre Drenagem Linfática">
+              Saiba mais
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Card 9 -->
+          <article class="treatment-card animate-on-scroll" tabindex="0" aria-label="Rejuvenescimento Facial">
+            <div class="treatment-card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"/>
+              </svg>
+            </div>
+            <div class="treatment-card-number" aria-hidden="true">09</div>
+            <h3 class="treatment-card-title">Rejuvenescimento</h3>
+            <p class="treatment-card-desc">Protocolos combinados de alta performance para reverter os sinais do tempo e restaurar a vitalidade da sua pele.</p>
+            <a href="#cta" class="treatment-card-link" aria-label="Saber mais sobre Rejuvenescimento Facial">
+              Saiba mais
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+        </div><!-- /treatments-grid -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BENEFITS — Diferenciais
+    ============================================================ -->
+    <section class="section benefits" id="diferenciais" aria-label="Nossos Diferenciais">
+      <div class="container">
+        <div class="benefits-layout">
+
+          <!-- Lado visual -->
+          <div class="benefits-visual animate-on-scroll">
+            <div class="benefits-image-frame">
+              <!-- SUBSTITUIR: imagem real da clínica -->
+              <img
+                src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=700&q=80"
+                alt="Ambiente sofisticado da Éclat Esthétique com iluminação elegante"
+                loading="lazy"
+                width="600"
+                height="750"
+                class="benefits-main-img"
+              />
+              <!-- Card flutuante -->
+              <div class="benefits-floating-card glassmorphism" aria-label="Resultado de satisfação">
+                <div class="floating-card-value">98%</div>
+                <div class="floating-card-label">de Satisfação</div>
+                <div class="floating-card-stars" aria-hidden="true">★★★★★</div>
+              </div>
+              <!-- Decorativo -->
+              <div class="benefits-deco" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Lado texto -->
+          <div class="benefits-content">
+            <header class="animate-on-scroll">
+              <span class="section-label">Por que nos escolher</span>
+              <h2 class="section-title">A excelência está<br /><em>em cada detalhe</em></h2>
+              <p class="section-desc">Da recepção ao pós-procedimento, cada momento na Éclat Esthétique foi desenhado para superar suas expectativas.</p>
+            </header>
+
+            <div class="benefits-list">
+
+              <div class="benefit-item animate-on-scroll">
+                <div class="benefit-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="benefit-text">
+                  <h3>Procedimentos Seguros</h3>
+                  <p>Todos os tratamentos seguem protocolos rigorosos com produtos e equipamentos certificados.</p>
+                </div>
+              </div>
+
+              <div class="benefit-item animate-on-scroll">
+                <div class="benefit-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                </div>
+                <div class="benefit-text">
+                  <h3>Tecnologia de Ponta</h3>
+                  <p>Equipamentos de última geração importados dos melhores fabricantes mundiais do setor.</p>
+                </div>
+              </div>
+
+              <div class="benefit-item animate-on-scroll">
+                <div class="benefit-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+                <div class="benefit-text">
+                  <h3>Resultados Naturais</h3>
+                  <p>Nossa filosofia é realçar o que é seu, nunca modificar. Beleza autêntica e única.</p>
+                </div>
+              </div>
+
+              <div class="benefit-item animate-on-scroll">
+                <div class="benefit-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="benefit-text">
+                  <h3>Atendimento Personalizado</h3>
+                  <p>Cada paciente recebe um plano de tratamento exclusivo, desenvolvido após avaliação completa.</p>
+                </div>
+              </div>
+
+              <div class="benefit-item animate-on-scroll">
+                <div class="benefit-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                </div>
+                <div class="benefit-text">
+                  <h3>Ambiente Sofisticado</h3>
+                  <p>Um espaço projetado para seu bem-estar, onde cada detalhe foi pensado para proporcionar conforto e exclusividade.</p>
+                </div>
+              </div>
+
+            </div><!-- /benefits-list -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BEFORE & AFTER — Comparação interativa
+    ============================================================ -->
+    <section class="section before-after" id="resultados" aria-label="Resultados Antes e Depois">
+      <div class="container">
+
+        <header class="section-header animate-on-scroll">
+          <span class="section-label">Transformações reais</span>
+          <h2 class="section-title">Resultados que<br /><em>falam por si mesmos</em></h2>
+          <p class="section-desc">Cada transformação é única. Arraste o divisor para comparar os resultados dos nossos tratamentos.</p>
+        </header>
+
+        <!-- Tabs de categorias -->
+        <div class="ba-tabs" role="tablist" aria-label="Categorias de tratamentos">
+          <button class="ba-tab active" role="tab" aria-selected="true" data-ba="0">Harmonização</button>
+          <button class="ba-tab" role="tab" aria-selected="false" data-ba="1">Rejuvenescimento</button>
+          <button class="ba-tab" role="tab" aria-selected="false" data-ba="2">Peeling</button>
+        </div>
+
+        <!-- Slider container -->
+        <div class="ba-slider-container">
+
+          <!-- Slider 0 — Harmonização -->
+          <div class="ba-slider active" data-index="0" aria-label="Comparação de Harmonização Facial">
+            <div class="ba-wrapper">
+              <!-- SUBSTITUIR: imagens reais antes/depois -->
+              <div class="ba-before" style="background: linear-gradient(135deg, #E8DDD5 0%, #C89B7B30 100%);">
+                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&q=80"
+                     alt="Antes da harmonização facial — paciente [nome reservado]"
+                     loading="lazy" />
+                <span class="ba-label" aria-hidden="true">Antes</span>
+              </div>
+              <div class="ba-after" style="background: linear-gradient(135deg, #F8F5F2 0%, #C89B7B20 100%);">
+                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80"
+                     alt="Depois da harmonização facial — paciente [nome reservado]"
+                     loading="lazy" />
+                <span class="ba-label ba-label-after" aria-hidden="true">Depois</span>
+              </div>
+              <div class="ba-divider" aria-hidden="true">
+                <div class="ba-handle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 12H3M15 18l6-6-6-6M9 6l-6 6 6 6"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <p class="ba-caption">Harmonização Facial — Resultados após 1 sessão</p>
+          </div>
+
+          <!-- Slider 1 — Rejuvenescimento -->
+          <div class="ba-slider" data-index="1" aria-label="Comparação de Rejuvenescimento" hidden>
+            <div class="ba-wrapper">
+              <div class="ba-before">
+                <img src="https://images.unsplash.com/photo-1552642986-ccb41e7059e7?w=600&q=80"
+                     alt="Antes do rejuvenescimento facial"
+                     loading="lazy" />
+                <span class="ba-label" aria-hidden="true">Antes</span>
+              </div>
+              <div class="ba-after">
+                <img src="https://images.unsplash.com/photo-1505944270255-72b8c68c6a70?w=600&q=80"
+                     alt="Depois do rejuvenescimento facial"
+                     loading="lazy" />
+                <span class="ba-label ba-label-after" aria-hidden="true">Depois</span>
+              </div>
+              <div class="ba-divider" aria-hidden="true">
+                <div class="ba-handle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 12H3M15 18l6-6-6-6M9 6l-6 6 6 6"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <p class="ba-caption">Rejuvenescimento Facial — Protocolo completo</p>
+          </div>
+
+          <!-- Slider 2 — Peeling -->
+          <div class="ba-slider" data-index="2" aria-label="Comparação de Peeling" hidden>
+            <div class="ba-wrapper">
+              <div class="ba-before">
+                <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80"
+                     alt="Antes do peeling profissional"
+                     loading="lazy" />
+                <span class="ba-label" aria-hidden="true">Antes</span>
+              </div>
+              <div class="ba-after">
+                <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&q=80"
+                     alt="Depois do peeling profissional"
+                     loading="lazy" />
+                <span class="ba-label ba-label-after" aria-hidden="true">Depois</span>
+              </div>
+              <div class="ba-divider" aria-hidden="true">
+                <div class="ba-handle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 12H3M15 18l6-6-6-6M9 6l-6 6 6 6"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <p class="ba-caption">Peeling Profissional — Renovação completa da pele</p>
+          </div>
+
+        </div><!-- /ba-slider-container -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ESPECIALISTAS
+    ============================================================ -->
+    <section class="section specialists" id="especialistas" aria-label="Nossa Equipe de Especialistas">
+      <div class="container">
+
+        <header class="section-header animate-on-scroll">
+          <span class="section-label">Quem cuida de você</span>
+          <h2 class="section-title">Especialistas<br /><em>de referência nacional</em></h2>
+          <p class="section-desc">Nossa equipe é formada pelos profissionais mais qualificados e atualizados do setor estético, comprometidos com os mais altos padrões de excelência.</p>
+        </header>
+
+        <div class="specialists-grid">
+
+          <!-- Especialista 1 -->
+          <article class="specialist-card animate-on-scroll" tabindex="0">
+            <div class="specialist-photo-wrapper">
+              <!-- SUBSTITUIR: foto real da especialista -->
+              <div class="specialist-photo-placeholder" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80"
+                     alt="Dra. Isabelle Moreau — Médica especialista em harmonização facial"
+                     loading="lazy"
+                     class="specialist-photo" />
+              </div>
+              <div class="specialist-badge" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5L22 10l-5 4.5 1.5 7L12 18l-6.5 3.5L7 14.5 2 10l7-1.5z"/></svg>
+              </div>
+            </div>
+            <div class="specialist-info">
+              <h3 class="specialist-name">Dra. Isabelle Moreau</h3>
+              <span class="specialist-role">Médica Estética · CRM 123456</span>
+              <p class="specialist-bio">Especialista em harmonização facial com mais de 12 anos de experiência. Pós-graduada pela USP e formada em técnicas avançadas na Europa.</p>
+              <div class="specialist-credentials">
+                <span class="credential-tag">Harmonização Facial</span>
+                <span class="credential-tag">Bioestimuladores</span>
+                <span class="credential-tag">Botox</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Especialista 2 -->
+          <article class="specialist-card animate-on-scroll" tabindex="0">
+            <div class="specialist-photo-wrapper">
+              <div class="specialist-photo-placeholder" aria-hidden="true">
+                <!-- SUBSTITUIR: foto real da especialista -->
+                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80"
+                     alt="Dra. Camille Rousseau — Dermatologista especialista em laser"
+                     loading="lazy"
+                     class="specialist-photo" />
+              </div>
+              <div class="specialist-badge" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5L22 10l-5 4.5 1.5 7L12 18l-6.5 3.5L7 14.5 2 10l7-1.5z"/></svg>
+              </div>
+            </div>
+            <div class="specialist-info">
+              <h3 class="specialist-name">Dra. Camille Rousseau</h3>
+              <span class="specialist-role">Dermatologista · CRM 654321</span>
+              <p class="specialist-bio">Dermatologista com foco em tecnologias a laser e rejuvenescimento. Membro da Sociedade Brasileira de Dermatologia e formada em Paris.</p>
+              <div class="specialist-credentials">
+                <span class="credential-tag">Laser</span>
+                <span class="credential-tag">Peelings</span>
+                <span class="credential-tag">Rejuvenescimento</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Especialista 3 -->
+          <article class="specialist-card animate-on-scroll" tabindex="0">
+            <div class="specialist-photo-wrapper">
+              <div class="specialist-photo-placeholder" aria-hidden="true">
+                <!-- SUBSTITUIR: foto real da especialista -->
+                <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=400&q=80"
+                     alt="Fernanda Costa — Esteticista sênior especialista em corpo"
+                     loading="lazy"
+                     class="specialist-photo" />
+              </div>
+              <div class="specialist-badge" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5L22 10l-5 4.5 1.5 7L12 18l-6.5 3.5L7 14.5 2 10l7-1.5z"/></svg>
+              </div>
+            </div>
+            <div class="specialist-info">
+              <h3 class="specialist-name">Fernanda Costa</h3>
+              <span class="specialist-role">Esteticista Sênior · CREFITO 78910</span>
+              <p class="specialist-bio">Especialista em tratamentos corporais e limpeza de pele com 8 anos de experiência em clínicas de alto padrão no Brasil e exterior.</p>
+              <div class="specialist-credentials">
+                <span class="credential-tag">Drenagem</span>
+                <span class="credential-tag">Limpeza de Pele</span>
+                <span class="credential-tag">Corporal</span>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /specialists-grid -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TECNOLOGIAS
+    ============================================================ -->
+    <section class="section technologies" aria-label="Tecnologias Utilizadas">
+      <div class="container">
+
+        <header class="section-header animate-on-scroll">
+          <span class="section-label">Inovação a serviço da beleza</span>
+          <h2 class="section-title">Tecnologias que<br /><em>transformam</em></h2>
+        </header>
+
+        <div class="tech-grid">
+
+          <div class="tech-card animate-on-scroll glassmorphism" tabindex="0">
+            <div class="tech-card-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <circle cx="12" cy="12" r="5"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+              </svg>
+            </div>
+            <h3>Laser Fracionado CO₂</h3>
+            <p>Rejuvenescimento dérmico profundo com mínimo tempo de recuperação e resultados duradouros.</p>
+          </div>
+
+          <div class="tech-card animate-on-scroll glassmorphism" tabindex="0">
+            <div class="tech-card-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <h3>Ultraformer III</h3>
+            <p>HIFU de última geração para lifting não-cirúrgico com resultados visíveis desde a primeira sessão.</p>
+          </div>
+
+          <div class="tech-card animate-on-scroll glassmorphism" tabindex="0">
+            <div class="tech-card-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <h3>Radiofrequência Tripolar</h3>
+            <p>Estimulação profunda de colágeno e elastina para firmeza e contorno facial e corporal.</p>
+          </div>
+
+          <div class="tech-card animate-on-scroll glassmorphism" tabindex="0">
+            <div class="tech-card-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3>Microagulhamento RF</h3>
+            <p>Combinação de microagulhamento com radiofrequência para resultados superiores em textura e firmeza.</p>
+          </div>
+
+          <div class="tech-card animate-on-scroll glassmorphism" tabindex="0">
+            <div class="tech-card-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+              </svg>
+            </div>
+            <h3>LPG Endermologie</h3>
+            <p>Tecnologia francesa líder em tratamento de celulite, silhueta e remodelação corporal.</p>
+          </div>
+
+          <div class="tech-card animate-on-scroll glassmorphism" tabindex="0">
+            <div class="tech-card-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3>Fototerapia LED</h3>
+            <p>Tratamento não-invasivo com diferentes comprimentos de onda para luminosidade, acne e anti-aging.</p>
+          </div>
+
+        </div><!-- /tech-grid -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ESTATÍSTICAS — Contadores animados
+    ============================================================ -->
+    <section class="section stats" aria-label="Nossas Estatísticas" role="region">
+      <div class="stats-bg" aria-hidden="true" data-parallax="0.2"></div>
+      <div class="container">
+        <div class="stats-grid">
+
+          <div class="stat-item animate-on-scroll">
+            <div class="stat-value" data-count="12000" data-suffix="+" aria-label="Mais de 12000 procedimentos realizados">
+              <span class="count-number">0</span><span class="count-suffix">+</span>
+            </div>
+            <div class="stat-label">Procedimentos realizados</div>
+          </div>
+
+          <div class="stat-item animate-on-scroll">
+            <div class="stat-value" data-count="16" data-suffix="" aria-label="16 anos de experiência">
+              <span class="count-number">0</span>
+              <span class="count-suffix" style="font-size:2.5rem;"> anos</span>
+            </div>
+            <div class="stat-label">de Experiência</div>
+          </div>
+
+          <div class="stat-item animate-on-scroll">
+            <div class="stat-value" data-count="49" data-suffix="★" data-decimal="true" aria-label="Avaliação média 4,9 estrelas">
+              <span class="count-number">0</span><span class="count-suffix">★</span>
+            </div>
+            <div class="stat-label">Avaliação média</div>
+          </div>
+
+          <div class="stat-item animate-on-scroll">
+            <div class="stat-value" data-count="98" data-suffix="%" aria-label="98% de satisfação">
+              <span class="count-number">0</span><span class="count-suffix">%</span>
+            </div>
+            <div class="stat-label">de Satisfação</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         GALERIA PREMIUM
+    ============================================================ -->
+    <section class="section gallery" id="galeria" aria-label="Galeria Premium da Clínica">
+      <div class="container">
+
+        <header class="section-header animate-on-scroll">
+          <span class="section-label">Nossa clínica</span>
+          <h2 class="section-title">Um espaço<br /><em>pensado para você</em></h2>
+          <p class="section-desc">Cada detalhe do nosso ambiente foi cuidadosamente projetado para proporcionar bem-estar, sofisticação e conforto absolutos.</p>
+        </header>
+
+        <div class="gallery-grid">
+          <!-- SUBSTITUIR: imagens reais da clínica -->
+
+          <button class="gallery-item gallery-item--large animate-on-scroll"
+                  data-gallery-index="0"
+                  aria-label="Abrir foto: Recepção da Éclat Esthétique em tela cheia">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80"
+                 alt="Recepção elegante da Éclat Esthétique com design sofisticado"
+                 loading="lazy" />
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </button>
+
+          <button class="gallery-item animate-on-scroll"
+                  data-gallery-index="1"
+                  aria-label="Abrir foto: Sala de procedimentos em tela cheia">
+            <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=500&q=80"
+                 alt="Sala de procedimentos estéticos com equipamentos premium"
+                 loading="lazy" />
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </button>
+
+          <button class="gallery-item animate-on-scroll"
+                  data-gallery-index="2"
+                  aria-label="Abrir foto: Lounge de espera em tela cheia">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=500&q=80"
+                 alt="Lounge de espera com ambiente relaxante e sofisticado"
+                 loading="lazy" />
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </button>
+
+          <button class="gallery-item animate-on-scroll"
+                  data-gallery-index="3"
+                  aria-label="Abrir foto: Área de tratamentos corporais em tela cheia">
+            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=500&q=80"
+                 alt="Área de tratamentos corporais da Éclat Esthétique"
+                 loading="lazy" />
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </button>
+
+          <button class="gallery-item gallery-item--large animate-on-scroll"
+                  data-gallery-index="4"
+                  aria-label="Abrir foto: Procedimento estético em andamento em tela cheia">
+            <img src="https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?w=800&q=80"
+                 alt="Especialista realizando procedimento estético com precisão"
+                 loading="lazy" />
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </button>
+
+          <button class="gallery-item animate-on-scroll"
+                  data-gallery-index="5"
+                  aria-label="Abrir foto: Produtos premium utilizados na clínica em tela cheia">
+            <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&q=80"
+                 alt="Produtos cosméticos premium utilizados nos tratamentos da Éclat"
+                 loading="lazy" />
+            <div class="gallery-overlay" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </button>
+
+        </div><!-- /gallery-grid -->
+      </div>
+    </section>
+
+    <!-- Modal da Galeria -->
+    <div class="gallery-modal" id="gallery-modal" role="dialog" aria-modal="true" aria-label="Visualização de imagem em tela cheia" hidden>
+      <div class="modal-backdrop"></div>
+      <button class="modal-close" aria-label="Fechar galeria">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <button class="modal-prev" aria-label="Imagem anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="modal-next" aria-label="Próxima imagem">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <div class="modal-content">
+        <img class="modal-img" src="" alt="" id="modal-img" />
+        <p class="modal-caption" id="modal-caption"></p>
+        <div class="modal-zoom-hint" aria-hidden="true">Duplo clique para ampliar</div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PROVAS SOCIAIS — Vídeos, depoimentos em áudio, avaliações
+    ============================================================ -->
+    <section class="section social-proof" id="depoimentos" aria-label="Provas Sociais e Depoimentos">
+      <div class="container">
+
+        <header class="section-header animate-on-scroll">
+          <span class="section-label">O que nossas pacientes dizem</span>
+          <h2 class="section-title">Histórias reais,<br /><em>transformações verdadeiras</em></h2>
+        </header>
+
+        <!-- Avaliações em estrelas (plataformas externas) -->
+        <div class="rating-platforms animate-on-scroll">
+          <div class="rating-platform-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#4285F4" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            <div>
+              <div class="platform-rating" aria-label="4.9 estrelas no Google">4,9 ★★★★★</div>
+              <div class="platform-name">Google</div>
+            </div>
+          </div>
+          <div class="rating-platform-divider" aria-hidden="true"></div>
+          <div class="rating-platform-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <div>
+              <div class="platform-rating" aria-label="5.0 estrelas no Facebook">5,0 ★★★★★</div>
+              <div class="platform-name">Facebook</div>
+            </div>
+          </div>
+          <div class="rating-platform-divider" aria-hidden="true"></div>
+          <div class="rating-platform-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="url(#ig-grad)" aria-hidden="true">
+              <defs><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="50%" style="stop-color:#e6683c"/><stop offset="100%" style="stop-color:#dc2743"/></linearGradient></defs>
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <div>
+              <div class="platform-rating" aria-label="4.9 estrelas no Instagram">4,9 ★★★★★</div>
+              <div class="platform-name">Instagram</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimentos em texto -->
+        <div class="testimonials-grid">
+
+          <article class="testimonial-card animate-on-scroll" tabindex="0">
+            <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+            <blockquote class="testimonial-text">
+              "A Éclat mudou completamente minha autoestima. O atendimento é único, o ambiente é sofisticado e os resultados superaram todas as minhas expectativas. Me sinto renovada!"
+            </blockquote>
+            <footer class="testimonial-author">
+              <!-- SUBSTITUIR: foto real da paciente -->
+              <div class="testimonial-avatar" aria-hidden="true" style="background: linear-gradient(135deg, #C89B7B, #A67C52);">M</div>
+              <div>
+                <cite class="testimonial-name">Marina Alves</cite>
+                <span class="testimonial-treatment">Harmonização Facial · São Paulo</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card testimonial-card--featured animate-on-scroll" tabindex="0">
+            <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+            <blockquote class="testimonial-text">
+              "Profissionais incríveis, ambiente de outro nível e resultados que eu nunca imaginei possíveis sem cirurgia. A Dra. Isabelle é talentosíssima. Recomendo de olhos fechados!"
+            </blockquote>
+            <footer class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true" style="background: linear-gradient(135deg, #A67C52, #8B6544);">J</div>
+              <div>
+                <cite class="testimonial-name">Juliana Santos</cite>
+                <span class="testimonial-treatment">Bioestimuladores + Botox · São Paulo</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card animate-on-scroll" tabindex="0">
+            <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+            <blockquote class="testimonial-text">
+              "Vim sem grandes expectativas e saí completamente apaixonada. A drenagem linfática foi transformadora e o resultado do laser nas manchas foi além do que eu esperava!"
+            </blockquote>
+            <footer class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true" style="background: linear-gradient(135deg, #C89B7B, #A67C52);">A</div>
+              <div>
+                <cite class="testimonial-name">Ana Claudia Pereira</cite>
+                <span class="testimonial-treatment">Laser + Drenagem · Campinas</span>
+              </div>
+            </footer>
+          </article>
+
+        </div><!-- /testimonials-grid -->
+
+        <!-- Vídeos depoimentos (placeholders) -->
+        <div class="video-testimonials animate-on-scroll">
+          <h3 class="video-testimonials-title">Depoimentos em vídeo</h3>
+          <div class="video-testimonials-grid">
+
+            <!-- SUBSTITUIR: vídeo real do depoimento -->
+            <button class="video-testimony-card" aria-label="Reproduzir depoimento em vídeo de Carolina Mendes">
+              <div class="video-testimony-thumb">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80"
+                     alt="Carolina Mendes — Depoimento em vídeo sobre Harmonização Facial"
+                     loading="lazy" />
+                <div class="video-play-btn" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+              <div class="video-testimony-info">
+                <span class="video-testimony-name">Carolina Mendes</span>
+                <span class="video-testimony-treatment">Harmonização Facial</span>
+              </div>
+            </button>
+
+            <!-- SUBSTITUIR: vídeo real do depoimento -->
+            <button class="video-testimony-card" aria-label="Reproduzir depoimento em vídeo de Patrícia Lima">
+              <div class="video-testimony-thumb">
+                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80"
+                     alt="Patrícia Lima — Depoimento em vídeo sobre Rejuvenescimento"
+                     loading="lazy" />
+                <div class="video-play-btn" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+              <div class="video-testimony-info">
+                <span class="video-testimony-name">Patrícia Lima</span>
+                <span class="video-testimony-treatment">Rejuvenescimento</span>
+              </div>
+            </button>
+
+            <!-- SUBSTITUIR: vídeo real do depoimento -->
+            <button class="video-testimony-card" aria-label="Reproduzir depoimento em vídeo de Renata Costa">
+              <div class="video-testimony-thumb">
+                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80"
+                     alt="Renata Costa — Depoimento em vídeo sobre Peeling"
+                     loading="lazy" />
+                <div class="video-play-btn" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+              <div class="video-testimony-info">
+                <span class="video-testimony-name">Renata Costa</span>
+                <span class="video-testimony-treatment">Peelings Profissionais</span>
+              </div>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Depoimentos em áudio (placeholders) -->
+        <div class="audio-testimonials animate-on-scroll">
+          <h3 class="audio-testimonials-title">Depoimentos em áudio</h3>
+          <div class="audio-testimonials-list">
+
+            <!-- SUBSTITUIR: arquivo de áudio real -->
+            <div class="audio-card" role="region" aria-label="Depoimento em áudio de Fernanda Rocha">
+              <div class="audio-card-avatar" aria-hidden="true" style="background: linear-gradient(135deg, #C89B7B, #A67C52);">F</div>
+              <div class="audio-card-info">
+                <span class="audio-card-name">Fernanda Rocha</span>
+                <span class="audio-card-treatment">Bioestimuladores de Colágeno</span>
+                <!-- SUBSTITUIR: src pelo arquivo de áudio real -->
+                <audio class="audio-player" controls aria-label="Ouvir depoimento de Fernanda Rocha">
+                  <source src="audio/depoimento-fernanda.mp3" type="audio/mpeg" />
+                  Seu navegador não suporta o elemento de áudio.
+                </audio>
+              </div>
+            </div>
+
+            <!-- SUBSTITUIR: arquivo de áudio real -->
+            <div class="audio-card" role="region" aria-label="Depoimento em áudio de Luciana Martins">
+              <div class="audio-card-avatar" aria-hidden="true" style="background: linear-gradient(135deg, #A67C52, #8B6544);">L</div>
+              <div class="audio-card-info">
+                <span class="audio-card-name">Luciana Martins</span>
+                <span class="audio-card-treatment">Harmonização + Laser</span>
+                <!-- SUBSTITUIR: src pelo arquivo de áudio real -->
+                <audio class="audio-player" controls aria-label="Ouvir depoimento de Luciana Martins">
+                  <source src="audio/depoimento-luciana.mp3" type="audio/mpeg" />
+                  Seu navegador não suporta o elemento de áudio.
+                </audio>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ
+    ============================================================ -->
+    <section class="section faq" id="faq" aria-label="Perguntas Frequentes">
+      <div class="container">
+
+        <header class="section-header animate-on-scroll">
+          <span class="section-label">Tem dúvidas?</span>
+          <h2 class="section-title">Perguntas<br /><em>frequentes</em></h2>
+          <p class="section-desc">Respondemos as principais dúvidas sobre nossos tratamentos e procedimentos.</p>
+        </header>
+
+        <div class="faq-grid">
+
+          <div class="faq-list">
+
+            <div class="faq-item animate-on-scroll">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+                <span>Como funciona a avaliação inicial?</span>
+                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer" id="faq-1" hidden>
+                <p>A avaliação inicial é uma consulta completa e sem compromisso, onde nossa especialista analisa sua pele, histórico de saúde e objetivos estéticos. A partir daí, desenvolvemos um plano de tratamento personalizado e exclusivo para você, com sugestões de procedimentos e cronograma ideal.</p>
+              </div>
+            </div>
+
+            <div class="faq-item animate-on-scroll">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+                <span>Os procedimentos causam dor?</span>
+                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer" id="faq-2" hidden>
+                <p>A maioria dos tratamentos é minimamente invasiva e causa desconforto muito leve. Utilizamos cremes anestésicos tópicos nos procedimentos que podem gerar alguma sensação, garantindo máximo conforto durante toda a sessão. Cada paciente é diferente e trabalhamos respeitando seus limites.</p>
+              </div>
+            </div>
+
+            <div class="faq-item animate-on-scroll">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+                <span>Quanto tempo leva para ver os resultados?</span>
+                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer" id="faq-3" hidden>
+                <p>Depende do tratamento escolhido. Preenchimentos e botox apresentam resultados imediatos ou em até 14 dias. Bioestimuladores e lasers mostram resultados progressivos em 30 a 90 dias. Durante a avaliação, explicamos detalhadamente o cronograma de evolução de cada procedimento.</p>
+              </div>
+            </div>
+
+            <div class="faq-item animate-on-scroll">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+                <span>Os resultados são naturais?</span>
+                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer" id="faq-4" hidden>
+                <p>Esta é nossa maior prioridade. Nossa filosofia é sempre preservar e realçar a identidade natural de cada paciente. Trabalhamos com técnicas sutis e produtos de alta qualidade para garantir resultados elegantes e completamente naturais, que valorizam sua beleza sem artificialidade.</p>
+              </div>
+            </div>
+
+            <div class="faq-item animate-on-scroll">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+                <span>Há alguma contraindicação para os tratamentos?</span>
+                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer" id="faq-5" hidden>
+                <p>Sim, algumas condições de saúde podem contraindicar determinados procedimentos. Por isso, realizamos uma anamnese completa antes de qualquer tratamento. Gestantes, lactantes e pacientes com algumas condições específicas podem ter restrições, que serão avaliadas individualmente com toda segurança e transparência.</p>
+              </div>
+            </div>
+
+            <div class="faq-item animate-on-scroll">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+                <span>Quais formas de pagamento são aceitas?</span>
+                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="faq-answer" id="faq-6" hidden>
+                <p>Aceitamos todas as formas de pagamento: cartões de crédito (parcelamento em até 12x), débito, Pix e dinheiro. Também trabalhamos com pacotes de tratamento que oferecem condições especiais. Consulte nossa equipe para conhecer todas as opções disponíveis para você.</p>
+              </div>
+            </div>
+
+          </div><!-- /faq-list -->
+
+          <!-- FAQ Lateral -->
+          <div class="faq-aside animate-on-scroll">
+            <div class="faq-aside-card glassmorphism">
+              <div class="faq-aside-icon" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <h3>Ainda tem dúvidas?</h3>
+              <p>Nossa equipe está disponível para responder todas as suas perguntas com atenção e carinho.</p>
+              <a href="https://wa.me/5511999999999" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Éclat Esthétique pelo WhatsApp">
+                Falar pelo WhatsApp
+              </a>
+              <a href="tel:+5511999999999" class="btn btn-outline" aria-label="Ligar para a Éclat Esthétique">
+                (11) 9999-9999
+              </a>
+            </div>
+          </div>
+
+        </div><!-- /faq-grid -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA FINAL
+    ============================================================ -->
+    <section class="section cta-final" id="cta" aria-label="Agendar sua avaliação">
+      <div class="cta-bg" aria-hidden="true" data-parallax="0.25">
+        <!-- SUBSTITUIR: imagem de fundo real da clínica -->
+        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1920&q=80"
+             alt=""
+             aria-hidden="true"
+             loading="lazy" />
+      </div>
+      <div class="cta-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cta-content animate-on-scroll">
+
+          <span class="section-label cta-label">Comece sua transformação hoje</span>
+
+          <h2 class="cta-title">
+            Sua melhor versão<br />
+            <em>começa com uma conversa</em>
+          </h2>
+
+          <p class="cta-desc">
+            Agende agora sua avaliação gratuita e descubra quais tratamentos<br class="br-desktop" />
+            foram desenvolvidos especialmente para você.
+          </p>
+
+          <!-- Formulário de contato simplificado -->
+          <form class="cta-form" aria-label="Formulário de agendamento" novalidate>
+            <div class="form-group">
+              <label for="form-name" class="sr-only">Seu nome completo</label>
+              <input
+                type="text"
+                id="form-name"
+                name="name"
+                placeholder="Seu nome completo"
+                class="form-input"
+                required
+                autocomplete="name"
+                aria-required="true"
+              />
+            </div>
+            <div class="form-group">
+              <label for="form-phone" class="sr-only">Seu WhatsApp</label>
+              <input
+                type="tel"
+                id="form-phone"
+                name="phone"
+                placeholder="Seu WhatsApp"
+                class="form-input"
+                required
+                autocomplete="tel"
+                aria-required="true"
+              />
+            </div>
+            <div class="form-group">
+              <label for="form-treatment" class="sr-only">Tratamento de interesse</label>
+              <select id="form-treatment" name="treatment" class="form-input form-select" aria-required="false">
+                <option value="" disabled selected>Tratamento de interesse</option>
+                <option value="harmonizacao">Harmonização Facial</option>
+                <option value="botox">Botox & Toxina</option>
+                <option value="preenchimento">Preenchimento Facial</option>
+                <option value="bioestimuladores">Bioestimuladores</option>
+                <option value="laser">Laser & Fototerapia</option>
+                <option value="peelings">Peelings</option>
+                <option value="limpeza">Limpeza de Pele</option>
+                <option value="drenagem">Drenagem Linfática</option>
+                <option value="rejuvenescimento">Rejuvenescimento</option>
+                <option value="avaliacao">Avaliação Completa</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-full">
+              <span>Solicitar Avaliação Gratuita</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p class="form-disclaimer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Seus dados são totalmente seguros e nunca serão compartilhados.
+            </p>
+          </form>
+
+          <!-- Alternativa WhatsApp -->
+          <div class="cta-or" aria-hidden="true"><span>ou</span></div>
+          <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20na%20Éclat%20Esthétique."
+             class="btn btn-whatsapp"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Agendar pelo WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.549 4.107 1.51 5.845L.057 23.6a.75.75 0 0 0 .92.92l5.755-1.453A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.73 9.73 0 0 1-4.964-1.357l-.356-.212-3.69.933.949-3.593-.232-.37A9.74 9.74 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /main -->
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Coluna 1 — Marca -->
+        <div class="footer-brand">
+          <a href="#hero" class="logo footer-logo" aria-label="Éclat Esthétique — Voltar ao topo">
+            <span class="logo-symbol" aria-hidden="true">É</span>
+            <span class="logo-text">
+              <strong>Éclat</strong>
+              <em>Esthétique</em>
+            </span>
+          </a>
+          <p class="footer-tagline">Sua beleza, elevada<br />à sua melhor versão.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/eclatesthetique" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Seguir Éclat Esthétique no Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17" cy="7" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://facebook.com/eclatesthetique" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Curtir Éclat Esthétique no Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://wa.me/5511999999999" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Falar com Éclat Esthétique pelo WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna 2 — Tratamentos -->
+        <nav class="footer-nav" aria-label="Tratamentos">
+          <h3 class="footer-nav-title">Tratamentos</h3>
+          <ul class="footer-nav-list" role="list">
+            <li><a href="#tratamentos">Harmonização Facial</a></li>
+            <li><a href="#tratamentos">Botox & Toxina</a></li>
+            <li><a href="#tratamentos">Preenchimento Facial</a></li>
+            <li><a href="#tratamentos">Bioestimuladores</a></li>
+            <li><a href="#tratamentos">Laser & Fototerapia</a></li>
+            <li><a href="#tratamentos">Peelings</a></li>
+            <li><a href="#tratamentos">Limpeza de Pele</a></li>
+            <li><a href="#tratamentos">Drenagem Linfática</a></li>
+          </ul>
+        </nav>
+
+        <!-- Coluna 3 — Institucional -->
+        <nav class="footer-nav" aria-label="Institucional">
+          <h3 class="footer-nav-title">Institucional</h3>
+          <ul class="footer-nav-list" role="list">
+            <li><a href="#especialistas">Nossa Equipe</a></li>
+            <li><a href="#diferenciais">Nossos Diferenciais</a></li>
+            <li><a href="#resultados">Antes & Depois</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#" aria-label="Acessar nossa política de privacidade">Política de Privacidade</a></li>
+            <li><a href="#" aria-label="Acessar nossos termos de uso">Termos de Uso</a></li>
+          </ul>
+        </nav>
+
+        <!-- Coluna 4 — Contato -->
+        <div class="footer-contact">
+          <h3 class="footer-nav-title">Contato</h3>
+          <address class="footer-address">
+            <div class="footer-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Rua Oscar Freire, 1000<br />Jardins, São Paulo – SP<br />CEP 01426-001</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.06-1.06a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.04z"/></svg>
+              <a href="tel:+5511999999999">(11) 9999-9999</a>
+            </div>
+            <div class="footer-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:contato@eclatesthetique.com.br">contato@eclatesthetique.com.br</a>
+            </div>
+            <div class="footer-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Seg–Sex: 8h às 20h<br />Sáb: 9h às 17h</span>
+            </div>
+          </address>
+        </div>
+
+      </div><!-- /footer-grid -->
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © <span id="footer-year"></span> Éclat Esthétique. Todos os direitos reservados.
+        </p>
+        <p class="footer-dev">
+          Desenvolvido com <span aria-label="amor">♥</span> para uma clínica de referência
+        </p>
+      </div>
+
+    </div><!-- /container -->
+  </footer>
+
+  <!-- WhatsApp Flutuante -->
+  <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação."
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Falar com a Éclat Esthétique pelo WhatsApp agora">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.549 4.107 1.51 5.845L.057 23.6a.75.75 0 0 0 .92.92l5.755-1.453A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.73 9.73 0 0 1-4.964-1.357l-.356-.212-3.69.933.949-3.593-.232-.37A9.74 9.74 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+    <span class="sr-only">WhatsApp</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+</body>
+</html>
