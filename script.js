@@ -235,21 +235,36 @@ const initParallax = () => {
    06. SCROLL ANIMATIONS — IntersectionObserver
    CORRIGIDO: fallback robusto + threshold menor + revelar imediato
 ---------------------------------------------------------------- */
+/* ----------------------------------------------------------------
+   06. SCROLL ANIMATIONS — IntersectionObserver
+   VERSÃO FAILSAFE: Revela tudo imediatamente se houver qualquer problema
+---------------------------------------------------------------- */
 const initScrollAnimations = () => {
   const elements = $$('.animate-on-scroll');
   if (!elements.length) return;
 
-  /* Se o browser não suporta IntersectionObserver,
-     revela tudo imediatamente */
+  // FALLBACK IMEDIATO: Se não suportar IntersectionObserver, revela tudo
   if (!('IntersectionObserver' in window)) {
+    console.warn('IntersectionObserver não suportado — revelando todos os elementos');
     elements.forEach(el => el.classList.add('is-visible'));
     return;
   }
 
+  // Função que revela o elemento
   const revealElement = (el) => {
     el.classList.add('is-visible');
   };
 
+  // SEGURANÇA: Após 500ms, revela qualquer elemento ainda oculto
+  setTimeout(() => {
+    elements.forEach(el => {
+      if (!el.classList.contains('is-visible')) {
+        revealElement(el);
+      }
+    });
+  }, 500);
+
+  // Observer normal
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
@@ -260,42 +275,29 @@ const initScrollAnimations = () => {
       });
     },
     {
-      /* Margem generosa: começa a revelar antes do elemento
-         entrar completamente na tela */
-      rootMargin : '0px 0px -40px 0px',
-      threshold  : 0.05,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.01, // Muito sensível
     }
   );
 
+  // Observa cada elemento
   elements.forEach(el => {
-    /* Verifica se o elemento já está visível no viewport
-       no momento do carregamento (ex: conteúdo acima da dobra) */
+    // Se já está visível no viewport, revela imediatamente
     const rect = el.getBoundingClientRect();
-    const inViewport = (
+    const isVisible = (
       rect.top < window.innerHeight &&
-      rect.bottom > 0
+      rect.bottom > 0 &&
+      rect.top > -rect.height
     );
 
-    if (inViewport) {
-      /* Revela imediatamente com pequeno delay para a transição
-         CSS funcionar corretamente após o preload */
-      setTimeout(() => revealElement(el), 100);
+    if (isVisible) {
+      // Pequeno delay para a transição CSS funcionar
+      setTimeout(() => revealElement(el), 50);
     } else {
       observer.observe(el);
     }
   });
-
-  /* Segurança extra: após 3 segundos revela qualquer elemento
-     que ainda não tenha sido revelado (edge cases) */
-  setTimeout(() => {
-    elements.forEach(el => {
-      if (!el.classList.contains('is-visible')) {
-        revealElement(el);
-      }
-    });
-  }, 3000);
 };
-
 /* ----------------------------------------------------------------
    07. CONTADORES ANIMADOS
 ---------------------------------------------------------------- */
