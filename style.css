@@ -642,10 +642,8 @@ em {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding-top: var(--header-h);
+  padding-top: calc(var(--header-h) + 2.5rem);
   max-width: 800px;
-
-  /* Em mobile, garante espaço suficiente embaixo para o scroll indicator */
   padding-bottom: clamp(5rem, 12vw, 3rem);
 }
 
