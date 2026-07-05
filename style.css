@@ -2333,7 +2333,7 @@ body.no-parallax [data-parallax] { transform: none !important; }
     overscroll-behavior: contain;
   }
 
-  /* Cada card vira uma linha de lista */
+    /* Cada card vira uma linha de lista */
   .treatment-card--modal {
     /* Reset completo do card */
     all: unset;
@@ -2350,8 +2350,10 @@ body.no-parallax [data-parallax] { transform: none !important; }
     border-bottom: 1px solid var(--color-secondary);
     background: var(--color-white);
 
-    /* Interação */
-    cursor: default;
+    /* Interação — cursor pointer pois toda linha é clicável */
+    cursor: pointer;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: rgba(200, 155, 123, 0.15);
     transition: background var(--transition-fast);
   }
 
