@@ -2296,6 +2296,15 @@ body.no-parallax [data-parallax] { transform: none !important; }
   .treatments-modal-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* No desktop, a seta do accordion não existe — é elemento só mobile */
+@media (min-width: 601px) {
+  .treatment-card--modal .card-mobile-arrow { display: none !important; }
+  .treatment-card--modal .card-mobile-body  { display: none !important; }
+  .treatment-card--modal .card-mobile-row   {
+    display: contents; /* Deixa os filhos fluírem normalmente no card */
+  }
+}
+
 /* ── MOBILE — layout lista com accordion ── */
 @media (max-width: 600px) {
 
