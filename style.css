@@ -2579,6 +2579,15 @@ body.no-parallax [data-parallax] {
     text-align: center;
   }
 
+   .hero-content {
+    padding-top: calc(var(--header-h) + 4rem);
+  }
+
+  .hero-badge {
+    margin-top: 0.5rem;
+  }
+}
+
   .ribbon-inner { gap: 1rem; }
   .ribbon-divider { display: none; }
 
@@ -2603,6 +2612,16 @@ body.no-parallax [data-parallax] {
    .scroll-indicator {
     display: none;
    }
+
+   .hero-content {
+    padding-top: calc(var(--header-h) + 4.5rem);
+  }
+
+  .hero-badge {
+    font-size: 0.68rem;
+    padding: 0.45rem 0.95rem;
+  }
+}
 
   .stats-grid { grid-template-columns: 1fr; }
 
