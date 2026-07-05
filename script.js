@@ -1222,18 +1222,20 @@ const initTreatmentsModal = () => {
   if (!modal || !openBtn) return;
 
   const openModal = () => {
-    modal.removeAttribute('hidden');
-    document.body.style.overflow = 'hidden';
-    closeBtn?.focus();
-    announceToSR('Modal de tratamentos aberto.');
-  };
+  modal.removeAttribute('hidden');
+  document.body.style.overflow = 'hidden';
+  document.body.classList.add('modal-open');    // ← NOVO
+  closeBtn?.focus();
+  announceToSR('Modal de tratamentos aberto.');
+};
 
-  const closeModal = () => {
-    modal.setAttribute('hidden', '');
-    document.body.style.overflow = '';
-    openBtn.focus();
-    announceToSR('Modal de tratamentos fechado.');
-  };
+const closeModal = () => {
+  modal.setAttribute('hidden', '');
+  document.body.style.overflow = '';
+  document.body.classList.remove('modal-open'); // ← NOVO
+  openBtn.focus();
+  announceToSR('Modal de tratamentos fechado.');
+};
 
   openBtn.addEventListener('click', openModal);
   closeBtn?.addEventListener('click', closeModal);
