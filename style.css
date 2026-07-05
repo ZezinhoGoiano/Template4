@@ -644,6 +644,9 @@ em {
   z-index: 1;
   padding-top: var(--header-h);
   max-width: 800px;
+
+  /* Em mobile, garante espaço suficiente embaixo para o scroll indicator */
+  padding-bottom: clamp(5rem, 12vw, 3rem);
 }
 
 .hero-badge {
@@ -714,6 +717,9 @@ em {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+
+  /* Empurra para longe do scroll indicator em mobile */
+  margin-bottom: clamp(3.5rem, 8vw, 2rem);
 }
 
 .hero-proof-avatars {
@@ -751,6 +757,7 @@ em {
 }
 
 /* Scroll indicator */
+/* Scroll indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;
@@ -762,6 +769,9 @@ em {
   gap: 0.5rem;
   z-index: 1;
   animation: float 2.5s ease-in-out infinite;
+
+  /* Garante que não sobrepõe o social proof em mobile */
+  pointer-events: none;
 }
 
 .scroll-line {
