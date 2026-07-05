@@ -1221,6 +1221,46 @@ const initTreatmentsModal = () => {
 
   if (!modal || !openBtn) return;
 
+     /* ── Cards clicáveis no mobile — fecham modal e rolam ao CTA ── */
+  const modalCards = $$('.treatment-card--modal', modal);
+
+  modalCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Só age como link no mobile (quando está em layout lista)
+      if (window.innerWidth > 600) return;
+
+      closeModal();
+
+      // Pequeno delay para o modal fechar antes de rolar
+      setTimeout(() => {
+        const ctaSection = $('#cta');
+        if (!ctaSection) return;
+
+        const headerH = parseInt(
+          getComputedStyle(document.documentElement)
+            .getPropertyValue('--header-h'), 10
+        ) || 80;
+
+        window.scrollTo({
+          top: ctaSection.getBoundingClientRect().top + window.scrollY - headerH,
+          behavior: STATE.reducedMotion ? 'auto' : 'smooth',
+        });
+
+        announceToSR('Redirecionado para o formulário de agendamento.');
+      }, 350);
+    });
+
+    // Suporte a teclado
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('keydown', (e) => {
+      if (window.innerWidth > 600) return;
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
+      }
+    });
+  });
+
   const openModal = () => {
   modal.removeAttribute('hidden');
   document.body.style.overflow = 'hidden';
