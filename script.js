@@ -1209,24 +1209,25 @@ const initHeroVideo = () => {
 /* ----------------------------------------------------------------
    TREATMENTS MODAL
 ---------------------------------------------------------------- */
+/* ----------------------------------------------------------------
+   TREATMENTS MODAL
+---------------------------------------------------------------- */
 const initTreatmentsModal = () => {
-  const modal     = $('#treatments-modal');
-  const openBtn   = $('.treatments-modal-open');
-  const closeBtn  = modal?.querySelector('.treatments-modal-close');
-  const backdrop  = modal?.querySelector('.treatments-modal-backdrop');
-  const ctaLinks  = modal ? $$('.treatments-modal-cta-link', modal) : [];
+  const modal = $('#treatments-modal');
+  const openBtn = $('.treatments-modal-open');
+  const closeBtn = $('.treatments-modal-close', modal);
+  const backdrop = $('.treatments-modal-backdrop', modal);
+  const ctaLinks = modal ? $$('.treatments-modal-cta-link', modal) : [];
 
   if (!modal || !openBtn) return;
 
-  /* ── Abre ── */
   const openModal = () => {
     modal.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';
     closeBtn?.focus();
-    announceToSR('Modal de tratamentos aberto. Use Tab para navegar, Escape para fechar.');
+    announceToSR('Modal de tratamentos aberto.');
   };
 
-  /* ── Fecha ── */
   const closeModal = () => {
     modal.setAttribute('hidden', '');
     document.body.style.overflow = '';
@@ -1238,31 +1239,27 @@ const initTreatmentsModal = () => {
   closeBtn?.addEventListener('click', closeModal);
   backdrop?.addEventListener('click', closeModal);
 
-  /* Fechar links do CTA dentro do modal */
   ctaLinks.forEach(link => {
-    link.addEventListener('click', () => closeModal());
+    link.addEventListener('click', closeModal);
   });
 
-  /* Escape */
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !modal.hasAttribute('hidden')) {
       closeModal();
     }
   });
 
-  /* Trap de foco */
   modal.addEventListener('keydown', (e) => {
     if (e.key !== 'Tab' || modal.hasAttribute('hidden')) return;
 
     const focusable = [
-      ...modal.querySelectorAll(
-        'button:not([disabled]), a[href], [tabindex="0"], input, select'
-      ),
-    ].filter(el => !el.closest('[hidden]'));
+      ...modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])')
+    ].filter(el => !el.hasAttribute('disabled'));
 
     if (!focusable.length) return;
+
     const first = focusable[0];
-    const last  = focusable[focusable.length - 1];
+    const last = focusable[focusable.length - 1];
 
     if (e.shiftKey && document.activeElement === first) {
       e.preventDefault();
@@ -1292,6 +1289,7 @@ const init = () => {
   initFooterYear();
   initVideoTestimonials();
   initHeroVideo();
+  initTreatmentsModal();
 };
 
 /* ----------------------------------------------------------------
