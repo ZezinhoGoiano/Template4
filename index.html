@@ -549,107 +549,121 @@
     <!-- ============================================================
          BEFORE & AFTER — Comparação interativa
     ============================================================ -->
-    <section class="section before-after" id="resultados" aria-label="Resultados Antes e Depois">
-      <div class="container">
+    <!-- ============================================================
+     BEFORE & AFTER — Comparação interativa
+============================================================ -->
+<section class="section before-after" id="resultados" aria-label="Resultados Antes e Depois">
+  <div class="container">
 
-        <header class="section-header animate-on-scroll">
-          <span class="section-label">Transformações reais</span>
-          <h2 class="section-title">Resultados que<br /><em>falam por si mesmos</em></h2>
-          <p class="section-desc">Cada transformação é única. Arraste o divisor para comparar os resultados dos nossos tratamentos.</p>
-        </header>
+    <header class="section-header animate-on-scroll">
+      <span class="section-label">Transformações reais</span>
+      <h2 class="section-title">Resultados que<br /><em>falam por si mesmos</em></h2>
+      <p class="section-desc">Cada transformação é única. Arraste o divisor para comparar os resultados dos nossos tratamentos.</p>
+    </header>
 
-        <!-- Tabs de categorias -->
-        <div class="ba-tabs" role="tablist" aria-label="Categorias de tratamentos">
-          <button class="ba-tab active" role="tab" aria-selected="true" data-ba="0">Harmonização</button>
-          <button class="ba-tab" role="tab" aria-selected="false" data-ba="1">Rejuvenescimento</button>
-          <button class="ba-tab" role="tab" aria-selected="false" data-ba="2">Peeling</button>
+    <!-- Tabs de categorias -->
+    <div class="ba-tabs" role="tablist" aria-label="Categorias de tratamentos">
+      <button class="ba-tab active" role="tab" aria-selected="true" data-ba="0">Harmonização</button>
+      <button class="ba-tab" role="tab" aria-selected="false" data-ba="1">Rejuvenescimento</button>
+      <button class="ba-tab" role="tab" aria-selected="false" data-ba="2">Peeling</button>
+    </div>
+
+    <!-- Slider container -->
+    <div class="ba-slider-container">
+
+      <!-- Slider 0 — Harmonização -->
+      <div class="ba-slider active" data-index="0" aria-label="Comparação de Harmonização Facial">
+        <div class="ba-wrapper">
+          <div class="ba-before">
+            <img
+              src="AntesHarm.jpeg"
+              alt="Antes da harmonização facial"
+              loading="lazy"
+            />
+            <span class="ba-label" aria-hidden="true">Antes</span>
+          </div>
+          <div class="ba-after">
+            <img
+              src="DepoisHarm.jpeg"
+              alt="Depois da harmonização facial"
+              loading="lazy"
+            />
+            <span class="ba-label ba-label-after" aria-hidden="true">Depois</span>
+          </div>
+          <div class="ba-divider" aria-hidden="true">
+            <div class="ba-handle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 12H3M15 18l6-6-6-6M9 6l-6 6 6 6"/>
+              </svg>
+            </div>
+          </div>
         </div>
-
-        <!-- Slider container -->
-                <!-- Slider container -->
-        <div class="ba-slider-container">
-
-          <!-- Slider 0 — Harmonização -->
-          <div class="ba-slider active" data-index="0" aria-label="Comparação de Harmonização Facial">
-            <div class="ba-wrapper">
-              <div class="ba-before">
-                <img src="AntesHarm.jpeg"
-                     alt="Antes da harmonização facial — paciente Éclat"
-                     loading="lazy" />
-                <span class="ba-label" aria-hidden="true">Antes</span>
-              </div>
-              <div class="ba-after">
-                <img src="DepoisHarm.jpeg"
-                     alt="Depois da harmonização facial — paciente Éclat"
-                     loading="lazy" />
-                <span class="ba-label ba-label-after" aria-hidden="true">Depois</span>
-              </div>
-              <div class="ba-divider" aria-hidden="true">
-                <div class="ba-handle">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path d="M21 12H3M15 18l6-6-6-6M9 6l-6 6 6 6"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <p class="ba-caption">Harmonização Facial — Resultados após 1 sessão</p>
-          </div>
-
-          <!-- Slider 1 — Rejuvenescimento -->
-          <div class="ba-slider" data-index="1" aria-label="Comparação de Rejuvenescimento" hidden>
-            <div class="ba-wrapper">
-              <div class="ba-before">
-                <img src="AntesReju.jpeg"
-                     alt="Antes do rejuvenescimento facial — paciente Éclat"
-                     loading="lazy" />
-                <span class="ba-label" aria-hidden="true">Antes</span>
-              </div>
-              <div class="ba-after">
-                <img src="DepoisReju.jpeg"
-                     alt="Depois do rejuvenescimento facial — paciente Éclat"
-                     loading="lazy" />
-                <span class="ba-label ba-label-after" aria-hidden="true">Depois</span>
-              </div>
-              <div class="ba-divider" aria-hidden="true">
-                <div class="ba-handle">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path d="M21 12H3M15 18l6-6-6-6M9 6l-6 6 6 6"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <p class="ba-caption">Rejuvenescimento Facial — Protocolo completo</p>
-          </div>
-
-          <!-- Slider 2 — Peeling -->
-          <div class="ba-slider" data-index="2" aria-label="Comparação de Peeling" hidden>
-            <div class="ba-wrapper">
-              <div class="ba-before">
-                <img src="AntesPeeling.jpeg"
-                     alt="Antes do peeling profissional — paciente Éclat"
-                     loading="lazy" />
-                <span class="ba-label" aria-hidden="true">Antes</span>
-              </div>
-              <div class="ba-after">
-                <img src="DepoisPeeling.jpeg"
-                     alt="Depois do peeling profissional — paciente Éclat"
-                     loading="lazy" />
-                <span class="ba-label ba-label-after" aria-hidden="true">Depois</span>
-              </div>
-              <div class="ba-divider" aria-hidden="true">
-                <div class="ba-handle">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path d="M21 12H3M15 18l6-6-6-6M9 6l-6 6 6 6"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <p class="ba-caption">Peeling Profissional — Renovação completa da pele</p>
-          </div>
-
-        </div><!-- /ba-slider-container -->
+        <p class="ba-caption">Harmonização Facial — Resultados após 1 sessão</p>
       </div>
-    </section>
+
+      <!-- Slider 1 — Rejuvenescimento -->
+      <div class="ba-slider" data-index="1" aria-label="Comparação de Rejuvenescimento" hidden>
+        <div class="ba-wrapper">
+          <div class="ba-before">
+            <img
+              src="AntesReju.jpeg"
+              alt="Antes do rejuvenescimento facial"
+              loading="lazy"
+            />
+            <span class="ba-label" aria-hidden="true">Antes</span>
+          </div>
+          <div class="ba-after">
+            <img
+              src="DepoisReju.jpeg"
+              alt="Depois do rejuvenescimento facial"
+              loading="lazy"
+            />
+            <span class="ba-label ba-label-after" aria-hidden="true">Depois</span>
+          </div>
+          <div class="ba-divider" aria-hidden="true">
+            <div class="ba-handle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 12H3M15 18l6-6-6-6M9 6l-6 6 6 6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <p class="ba-caption">Rejuvenescimento Facial — Protocolo completo</p>
+      </div>
+
+      <!-- Slider 2 — Peeling -->
+      <div class="ba-slider" data-index="2" aria-label="Comparação de Peeling" hidden>
+        <div class="ba-wrapper">
+          <div class="ba-before">
+            <img
+              src="AntesPeeling.jpeg"
+              alt="Antes do peeling profissional"
+              loading="lazy"
+            />
+            <span class="ba-label" aria-hidden="true">Antes</span>
+          </div>
+          <div class="ba-after">
+            <img
+              src="DepoisPeeling.jpeg"
+              alt="Depois do peeling profissional"
+              loading="lazy"
+            />
+            <span class="ba-label ba-label-after" aria-hidden="true">Depois</span>
+          </div>
+          <div class="ba-divider" aria-hidden="true">
+            <div class="ba-handle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 12H3M15 18l6-6-6-6M9 6l-6 6 6 6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <p class="ba-caption">Peeling Profissional — Renovação completa da pele</p>
+      </div>
+
+    </div><!-- /ba-slider-container -->
+  </div>
+</section>
 
     <!-- ============================================================
          ESPECIALISTAS
