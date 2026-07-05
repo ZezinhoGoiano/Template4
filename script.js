@@ -1080,16 +1080,15 @@ const initSmoothScroll = () => {
       const href = link.getAttribute('href');
       if (!href || href === '#') return;
 
+      // >>> ADICIONE ESTA LINHA <<<
+      // Ignora links dentro do modal de tratamentos (o modal cuida do scroll)
+      if (link.closest('.treatments-modal')) return;
+
       const target = document.querySelector(href);
       if (!target) return;
 
       e.preventDefault();
-
-      const headerH = parseInt(
-        getComputedStyle(document.documentElement).getPropertyValue('--header-h'),
-        10
-      ) || 80;
-
+      const headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10) || 80;
       const top = target.getBoundingClientRect().top + window.scrollY - headerH;
 
       window.scrollTo({
@@ -1097,7 +1096,6 @@ const initSmoothScroll = () => {
         behavior: STATE.reducedMotion ? 'auto' : 'smooth',
       });
 
-      // Foco no target para acessibilidade
       target.setAttribute('tabindex', '-1');
       target.focus({ preventScroll: true });
       target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true });
