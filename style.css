@@ -2867,6 +2867,14 @@ body.no-parallax [data-parallax] {
   }
 }
 
+/* Oculta elementos flutuantes quando qualquer modal está aberto */
+body.modal-open .a11y-toolbar,
+body.modal-open .whatsapp-float {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+
 /* Impressão */
 @media print {
   .header,
