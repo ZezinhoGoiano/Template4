@@ -2798,21 +2798,34 @@ body.no-parallax [data-parallax] {
 /* Card dentro do modal — versão compacta */
 .treatment-card--modal {
   padding: var(--space-md);
+  min-height: unset;
+  height: auto;
 }
 
 .treatment-card--modal .treatment-card-icon {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   margin-bottom: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.treatment-card--modal .treatment-card-number {
+  font-size: var(--fs-xl);
 }
 
 .treatment-card--modal .treatment-card-title {
   font-size: var(--fs-base);
+  margin-bottom: 0.4rem;
 }
 
 .treatment-card--modal .treatment-card-desc {
   font-size: var(--fs-xs);
+  line-height: 1.65;
   margin-bottom: var(--space-sm);
+}
+
+.treatment-card--modal .treatment-card-link {
+  font-size: var(--fs-xs);
 }
 
 /* Footer do modal */
