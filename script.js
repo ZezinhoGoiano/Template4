@@ -30,16 +30,15 @@ const STATE = {
   parallaxEnabled     : true,
   reducedMotion       : false,
   highContrast        : false,
-  fontScale           : 0,          // steps: -2 → +3
+  fontScale           : 0,
   a11yPanelOpen       : false,
-  baActive            : 0,          // before-after tab ativo
+  baActive            : 0,
   baDragging          : false,
   touchStartX         : 0,
   lastScrollY         : 0,
   ticking             : false,
 };
 
-/* Imagens da galeria com alt e caption — sincronizados com index.html */
 const GALLERY_ITEMS = [
   {
     src     : 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=85',
@@ -76,47 +75,10 @@ const GALLERY_ITEMS = [
 /* ----------------------------------------------------------------
    02. UTILITÁRIOS
 ---------------------------------------------------------------- */
-
-/**
- * Selector helper
- * @param {string} sel
- * @param {Element} [ctx=document]
- * @returns {Element|null}
- */
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
-
-/**
- * Selector helper — múltiplos
- * @param {string} sel
- * @param {Element} [ctx=document]
- * @returns {NodeList}
- */
 const $$ = (sel, ctx = document) => ctx.querySelectorAll(sel);
-
-/**
- * Clamp numérico
- * @param {number} val
- * @param {number} min
- * @param {number} max
- * @returns {number}
- */
 const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
-
-/**
- * Lerp suave
- * @param {number} a
- * @param {number} b
- * @param {number} t
- * @returns {number}
- */
 const lerp = (a, b, t) => a + (b - a) * t;
-
-/**
- * Debounce
- * @param {Function} fn
- * @param {number} delay
- * @returns {Function}
- */
 const debounce = (fn, delay = 200) => {
   let timer;
   return (...args) => {
@@ -124,18 +86,9 @@ const debounce = (fn, delay = 200) => {
     timer = setTimeout(() => fn(...args), delay);
   };
 };
-
-/**
- * Verifica preferência de sistema por motion reduzida
- * @returns {boolean}
- */
 const prefersReducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/**
- * Anuncia mensagem para leitores de tela via aria-live
- * @param {string} msg
- */
 const announceToSR = (() => {
   let liveRegion = null;
   return (msg) => {
@@ -153,7 +106,6 @@ const announceToSR = (() => {
 
 /* ----------------------------------------------------------------
    03. PRELOAD REMOVAL
-   Remove a classe "preload" que bloqueia animações no carregamento
 ---------------------------------------------------------------- */
 const removePreload = () => {
   document.body.classList.remove('preload');
@@ -171,7 +123,6 @@ const initHeader = () => {
 
   if (!header) return;
 
-  /* ── Scroll state ── */
   const updateHeader = () => {
     const scrolled = window.scrollY > 40;
     header.classList.toggle('scrolled', scrolled);
@@ -186,16 +137,13 @@ const initHeader = () => {
     }
   }, { passive: true });
 
-  // Trigger imediato para caso a página seja recarregada no meio
   updateHeader();
 
-  /* ── Mobile nav toggle ── */
   const openMobileNav = () => {
     toggle.setAttribute('aria-expanded', 'true');
     mobileNav.removeAttribute('hidden');
     mobileNav.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    // Foco no primeiro link
     const firstLink = mobileNav.querySelector('a, button');
     if (firstLink) firstLink.focus();
   };
@@ -213,24 +161,20 @@ const initHeader = () => {
     isOpen ? closeMobileNav() : openMobileNav();
   });
 
-  /* Fechar ao clicar em link mobile */
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => closeMobileNav());
   });
 
-  /* Fechar com Escape */
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       if (toggle.getAttribute('aria-expanded') === 'true') closeMobileNav();
     }
   });
 
-  /* Fechar ao redimensionar para desktop */
   window.addEventListener('resize', debounce(() => {
     if (window.innerWidth >= 1280) closeMobileNav();
   }, 200));
 
-  /* ── Active nav link no scroll ── */
   const sections = $$('section[id], div[id]');
 
   const updateActiveLink = () => {
@@ -255,7 +199,6 @@ const initHeader = () => {
 
 /* ----------------------------------------------------------------
    05. PARALLAX
-   Efeito suave em elementos com data-parallax="speed"
 ---------------------------------------------------------------- */
 const initParallax = () => {
   if (prefersReducedMotion()) return;
@@ -271,7 +214,6 @@ const initParallax = () => {
       const rect   = el.getBoundingClientRect();
       const center = rect.top + rect.height / 2 - window.innerHeight / 2;
       const offset = center * speed;
-
       el.style.transform = `translateY(${offset.toFixed(2)}px)`;
     });
   };
@@ -291,33 +233,71 @@ const initParallax = () => {
 
 /* ----------------------------------------------------------------
    06. SCROLL ANIMATIONS — IntersectionObserver
+   CORRIGIDO: fallback robusto + threshold menor + revelar imediato
 ---------------------------------------------------------------- */
 const initScrollAnimations = () => {
   const elements = $$('.animate-on-scroll');
   if (!elements.length) return;
 
+  /* Se o browser não suporta IntersectionObserver,
+     revela tudo imediatamente */
+  if (!('IntersectionObserver' in window)) {
+    elements.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const revealElement = (el) => {
+    el.classList.add('is-visible');
+  };
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          // Para performance, deixar de observar após animar
+          revealElement(entry.target);
           observer.unobserve(entry.target);
         }
       });
     },
     {
-      rootMargin : '0px 0px -60px 0px',
-      threshold  : 0.12,
+      /* Margem generosa: começa a revelar antes do elemento
+         entrar completamente na tela */
+      rootMargin : '0px 0px -40px 0px',
+      threshold  : 0.05,
     }
   );
 
-  elements.forEach(el => observer.observe(el));
+  elements.forEach(el => {
+    /* Verifica se o elemento já está visível no viewport
+       no momento do carregamento (ex: conteúdo acima da dobra) */
+    const rect = el.getBoundingClientRect();
+    const inViewport = (
+      rect.top < window.innerHeight &&
+      rect.bottom > 0
+    );
+
+    if (inViewport) {
+      /* Revela imediatamente com pequeno delay para a transição
+         CSS funcionar corretamente após o preload */
+      setTimeout(() => revealElement(el), 100);
+    } else {
+      observer.observe(el);
+    }
+  });
+
+  /* Segurança extra: após 3 segundos revela qualquer elemento
+     que ainda não tenha sido revelado (edge cases) */
+  setTimeout(() => {
+    elements.forEach(el => {
+      if (!el.classList.contains('is-visible')) {
+        revealElement(el);
+      }
+    });
+  }, 3000);
 };
 
 /* ----------------------------------------------------------------
    07. CONTADORES ANIMADOS
-   Ativa quando a seção de stats entra na viewport
 ---------------------------------------------------------------- */
 const initCounters = () => {
   const statsSection = $('.stats');
@@ -326,10 +306,6 @@ const initCounters = () => {
   const counters = $$('.stat-value', statsSection);
   let hasAnimated = false;
 
-  /**
-   * Anima um único contador
-   * @param {Element} el — .stat-value
-   */
   const animateCounter = (el) => {
     const target    = parseInt(el.dataset.count, 10);
     const suffix    = el.dataset.suffix || '';
@@ -340,7 +316,6 @@ const initCounters = () => {
     const duration = STATE.reducedMotion ? 0 : 1800;
     const start    = performance.now();
 
-    // Função especial para 4.9★ (target = 49 → exibe "4,9")
     const format = (val) => {
       if (isDecimal) return (val / 10).toFixed(1).replace('.', ',');
       if (target >= 1000) return val.toLocaleString('pt-BR');
@@ -350,12 +325,9 @@ const initCounters = () => {
     const tick = (now) => {
       const elapsed  = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      // Easing: easeOutExpo
       const eased    = 1 - Math.pow(2, -10 * progress);
       const current  = Math.round(lerp(0, target, eased));
-
       display.textContent = format(current);
-
       if (progress < 1) {
         requestAnimationFrame(tick);
       } else {
@@ -370,12 +342,16 @@ const initCounters = () => {
     }
   };
 
+  if (!('IntersectionObserver' in window)) {
+    counters.forEach((c, i) => setTimeout(() => animateCounter(c), i * 150));
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       if (entries[0].isIntersecting && !hasAnimated) {
         hasAnimated = true;
         counters.forEach((c, i) => {
-          // Escalonar início de cada contador
           setTimeout(() => animateCounter(c), i * 150);
         });
         observer.disconnect();
@@ -395,7 +371,6 @@ const initBeforeAfter = () => {
   const sliders = $$('.ba-slider');
   if (!tabs.length || !sliders.length) return;
 
-  /* ── Troca de tab ── */
   const showSlider = (index) => {
     tabs.forEach((tab, i) => {
       const isActive = i === index;
@@ -408,7 +383,6 @@ const initBeforeAfter = () => {
       if (isActive) {
         slider.removeAttribute('hidden');
         slider.classList.add('active');
-        // Resetar posição do divisor
         resetDivider(slider);
       } else {
         slider.setAttribute('hidden', '');
@@ -422,7 +396,6 @@ const initBeforeAfter = () => {
 
   tabs.forEach((tab, i) => {
     tab.addEventListener('click', () => showSlider(i));
-    // Navegação por teclado nas tabs
     tab.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') {
         e.preventDefault();
@@ -438,30 +411,25 @@ const initBeforeAfter = () => {
     });
   });
 
-  /* ── Lógica do slider de cada .ba-wrapper ── */
   sliders.forEach(slider => {
     const wrapper = slider.querySelector('.ba-wrapper');
     const after   = slider.querySelector('.ba-after');
     const divider = slider.querySelector('.ba-divider');
     if (!wrapper || !after || !divider) return;
 
-    let position = 50; // porcentagem
+    let position = 50;
 
     const setPosition = (pct) => {
       position = clamp(pct, 2, 98);
-      after.style.clipPath    = `inset(0 ${100 - position}% 0 0)`;
-      divider.style.left      = `${position}%`;
+      after.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+      divider.style.left   = `${position}%`;
     };
 
-    const resetDivider = () => setPosition(50);
-
-    /* Calcula posição em % a partir de evento */
     const getPct = (clientX) => {
       const rect = wrapper.getBoundingClientRect();
       return ((clientX - rect.left) / rect.width) * 100;
     };
 
-    /* Mouse */
     wrapper.addEventListener('mousedown', (e) => {
       STATE.baDragging = true;
       wrapper.style.cursor = 'ew-resize';
@@ -478,7 +446,6 @@ const initBeforeAfter = () => {
       wrapper.style.cursor = '';
     });
 
-    /* Touch */
     wrapper.addEventListener('touchstart', (e) => {
       STATE.baDragging = true;
       STATE.touchStartX = e.touches[0].clientX;
@@ -494,7 +461,6 @@ const initBeforeAfter = () => {
       STATE.baDragging = false;
     });
 
-    /* Teclado no wrapper */
     wrapper.setAttribute('tabindex', '0');
     wrapper.setAttribute('role', 'slider');
     wrapper.setAttribute('aria-label', 'Comparação antes e depois — use as setas para ajustar');
@@ -518,27 +484,19 @@ const initBeforeAfter = () => {
       if (e.key === 'End')  { e.preventDefault(); setPosition(98); }
     });
 
-    // Init
     setPosition(50);
-    // Expõe resetDivider no slider para uso no showSlider
-    slider._resetDivider = resetDivider;
+    slider._resetDivider = () => setPosition(50);
   });
 
-  // Corrige referência
   const resetDivider = (slider) => {
     if (slider._resetDivider) slider._resetDivider();
   };
 
-  // Init tab 0
   showSlider(0);
 };
 
 /* ----------------------------------------------------------------
    09. GALERIA MODAL
-   - Abre ao clicar em item
-   - Navega com botões / teclado / swipe
-   - Zoom com duplo clique
-   - Fecha com backdrop / botão / Escape
 ---------------------------------------------------------------- */
 const initGallery = () => {
   const modal      = $('#gallery-modal');
@@ -552,7 +510,6 @@ const initGallery = () => {
 
   if (!modal || !modalImg) return;
 
-  /* ── Abre modal ── */
   const openModal = (index) => {
     STATE.currentGalleryIndex = clamp(index, 0, GALLERY_ITEMS.length - 1);
     renderModalImage();
@@ -562,7 +519,6 @@ const initGallery = () => {
     announceToSR(`Imagem ${STATE.currentGalleryIndex + 1} de ${GALLERY_ITEMS.length}: ${GALLERY_ITEMS[STATE.currentGalleryIndex].caption}`);
   };
 
-  /* ── Fecha modal ── */
   const closeModal = () => {
     modal.setAttribute('hidden', '');
     document.body.style.overflow = '';
@@ -571,12 +527,10 @@ const initGallery = () => {
       modalImg.classList.remove('zoomed');
       modalImg.style.transform = '';
     }
-    // Retorna foco ao item que abriu
     const opener = $(`.gallery-item[data-gallery-index="${STATE.currentGalleryIndex}"]`);
     opener?.focus();
   };
 
-  /* ── Renderiza imagem no modal ── */
   const renderModalImage = () => {
     const item = GALLERY_ITEMS[STATE.currentGalleryIndex];
     if (!item) return;
@@ -584,7 +538,6 @@ const initGallery = () => {
     modalImg.style.opacity = '0';
     modalImg.style.transform = 'scale(0.96)';
 
-    // Remove zoom ao trocar imagem
     STATE.galleryZoomed = false;
     modalImg.classList.remove('zoomed');
 
@@ -598,7 +551,6 @@ const initGallery = () => {
       modalImg.style.transform  = 'scale(1)';
     }, 150);
 
-    // Atualiza aria-label dos botões
     const prevItem = GALLERY_ITEMS[(STATE.currentGalleryIndex - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length];
     const nextItem = GALLERY_ITEMS[(STATE.currentGalleryIndex + 1) % GALLERY_ITEMS.length];
     prevBtn?.setAttribute('aria-label', `Imagem anterior: ${prevItem.caption}`);
@@ -607,14 +559,12 @@ const initGallery = () => {
     announceToSR(`${item.caption} — ${STATE.currentGalleryIndex + 1} de ${GALLERY_ITEMS.length}`);
   };
 
-  /* ── Navegar ── */
   const navigate = (dir) => {
     const total = GALLERY_ITEMS.length;
     STATE.currentGalleryIndex = (STATE.currentGalleryIndex + dir + total) % total;
     renderModalImage();
   };
 
-  /* ── Zoom duplo clique ── */
   modalImg.addEventListener('dblclick', () => {
     STATE.galleryZoomed = !STATE.galleryZoomed;
     modalImg.classList.toggle('zoomed', STATE.galleryZoomed);
@@ -622,7 +572,6 @@ const initGallery = () => {
     announceToSR(STATE.galleryZoomed ? 'Imagem ampliada' : 'Zoom removido');
   });
 
-  /* ── Eventos ── */
   galleryBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const index = parseInt(btn.dataset.galleryIndex, 10);
@@ -643,7 +592,6 @@ const initGallery = () => {
   prevBtn?.addEventListener('click',  () => navigate(-1));
   nextBtn?.addEventListener('click',  () => navigate(1));
 
-  /* Teclado no modal */
   document.addEventListener('keydown', (e) => {
     if (modal.hasAttribute('hidden')) return;
     switch (e.key) {
@@ -655,7 +603,6 @@ const initGallery = () => {
     }
   });
 
-  /* Swipe touch no modal */
   let touchX = 0;
   modal.addEventListener('touchstart', (e) => {
     touchX = e.touches[0].clientX;
@@ -666,7 +613,6 @@ const initGallery = () => {
     if (Math.abs(diff) > 50) navigate(diff > 0 ? 1 : -1);
   }, { passive: true });
 
-  /* Trap focus no modal */
   modal.addEventListener('keydown', (e) => {
     if (e.key !== 'Tab' || modal.hasAttribute('hidden')) return;
     const focusable = [...modal.querySelectorAll('button, [tabindex="0"]')].filter(
@@ -675,7 +621,6 @@ const initGallery = () => {
     if (!focusable.length) return;
     const first = focusable[0];
     const last  = focusable[focusable.length - 1];
-
     if (e.shiftKey) {
       if (document.activeElement === first) { e.preventDefault(); last.focus(); }
     } else {
@@ -699,7 +644,6 @@ const initFAQ = () => {
     btn.addEventListener('click', () => {
       const isOpen = btn.getAttribute('aria-expanded') === 'true';
 
-      // Fecha todos os outros (accordion)
       items.forEach(other => {
         const otherBtn    = other.querySelector('.faq-question');
         const otherAnswer = other.querySelector('.faq-answer');
@@ -709,14 +653,12 @@ const initFAQ = () => {
         }
       });
 
-      // Toggle atual
       if (isOpen) {
         btn.setAttribute('aria-expanded', 'false');
         answer.setAttribute('hidden', '');
       } else {
         btn.setAttribute('aria-expanded', 'true');
         answer.removeAttribute('hidden');
-        // Scroll suave para o item
         setTimeout(() => {
           const headerH = parseInt(
             getComputedStyle(document.documentElement).getPropertyValue('--header-h'),
@@ -743,7 +685,6 @@ const initA11yToolbar = () => {
 
   if (!toolbar || !toggleBtn || !panel) return;
 
-  /* ── Abre/fecha painel ── */
   const openPanel = () => {
     panel.removeAttribute('hidden');
     toggleBtn.setAttribute('aria-expanded', 'true');
@@ -763,7 +704,6 @@ const initA11yToolbar = () => {
     STATE.a11yPanelOpen ? closePanel() : openPanel();
   });
 
-  /* Fechar com Escape */
   toolbar.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && STATE.a11yPanelOpen) {
       closePanel();
@@ -771,15 +711,28 @@ const initA11yToolbar = () => {
     }
   });
 
-  /* Fechar ao clicar fora */
   document.addEventListener('click', (e) => {
     if (STATE.a11yPanelOpen && !toolbar.contains(e.target)) closePanel();
   });
 
-  /* ── Ações ── */
-  const actions = {
+  const applyFontScale = () => {
+    const step = 2;
+    const base = 16 + STATE.fontScale * step;
+    document.documentElement.style.fontSize = `${base}px`;
+  };
 
-    /* Alto contraste */
+  const persistA11y = () => {
+    try {
+      localStorage.setItem('eclat-a11y', JSON.stringify({
+        highContrast    : STATE.highContrast,
+        fontScale       : STATE.fontScale,
+        reducedMotion   : STATE.reducedMotion,
+        parallaxEnabled : STATE.parallaxEnabled,
+      }));
+    } catch (_) {}
+  };
+
+  const actions = {
     contrast: (btn) => {
       STATE.highContrast = !STATE.highContrast;
       document.body.dataset.theme = STATE.highContrast ? 'high-contrast' : 'default';
@@ -788,8 +741,6 @@ const initA11yToolbar = () => {
       announceToSR(STATE.highContrast ? 'Alto contraste ativado' : 'Alto contraste desativado');
       persistA11y();
     },
-
-    /* Aumentar fonte */
     'font-increase': () => {
       if (STATE.fontScale >= 3) return;
       STATE.fontScale++;
@@ -797,8 +748,6 @@ const initA11yToolbar = () => {
       announceToSR(`Tamanho da fonte aumentado. Nível ${STATE.fontScale}`);
       persistA11y();
     },
-
-    /* Diminuir fonte */
     'font-decrease': () => {
       if (STATE.fontScale <= -2) return;
       STATE.fontScale--;
@@ -806,19 +755,14 @@ const initA11yToolbar = () => {
       announceToSR(`Tamanho da fonte diminuído. Nível ${STATE.fontScale}`);
       persistA11y();
     },
-
-    /* Reduzir animações */
     'reduce-motion': (btn) => {
       STATE.reducedMotion = !STATE.reducedMotion;
       document.body.classList.toggle('reduce-motion', STATE.reducedMotion);
-      // Remove smooth scroll
       document.documentElement.classList.toggle('no-smooth-scroll', STATE.reducedMotion);
       btn.setAttribute('aria-pressed', String(STATE.reducedMotion));
       announceToSR(STATE.reducedMotion ? 'Animações reduzidas' : 'Animações restauradas');
       persistA11y();
     },
-
-    /* Desativar parallax */
     'no-parallax': (btn) => {
       STATE.parallaxEnabled = !STATE.parallaxEnabled;
       document.body.classList.toggle('no-parallax', !STATE.parallaxEnabled);
@@ -829,8 +773,6 @@ const initA11yToolbar = () => {
       announceToSR(STATE.parallaxEnabled ? 'Parallax reativado' : 'Parallax desativado');
       persistA11y();
     },
-
-    /* Restaurar padrão */
     reset: () => {
       STATE.highContrast     = false;
       STATE.fontScale        = 0;
@@ -843,8 +785,6 @@ const initA11yToolbar = () => {
       applyFontScale();
 
       $$('[data-parallax]').forEach(el => el.style.transform = '');
-
-      // Resetar aria-pressed
       actionBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
 
       localStorage.removeItem('eclat-a11y');
@@ -855,28 +795,8 @@ const initA11yToolbar = () => {
   actionBtns.forEach(btn => {
     const action = btn.dataset.action;
     if (!action || !actions[action]) return;
-
     btn.addEventListener('click', () => actions[action](btn));
   });
-
-  /* ── Escala de fonte ── */
-  const applyFontScale = () => {
-    const step = 2; // px por passo
-    const base = 16 + STATE.fontScale * step;
-    document.documentElement.style.fontSize = `${base}px`;
-  };
-
-  /* ── Persistência (localStorage) ── */
-  const persistA11y = () => {
-    try {
-      localStorage.setItem('eclat-a11y', JSON.stringify({
-        highContrast    : STATE.highContrast,
-        fontScale       : STATE.fontScale,
-        reducedMotion   : STATE.reducedMotion,
-        parallaxEnabled : STATE.parallaxEnabled,
-      }));
-    } catch (_) { /* silencioso se localStorage bloqueado */ }
-  };
 
   const restoreA11y = () => {
     try {
@@ -910,12 +830,11 @@ const initA11yToolbar = () => {
         const btn = toolbar.querySelector('[data-action="no-parallax"]');
         btn?.setAttribute('aria-pressed', 'true');
       }
-    } catch (_) { /* silencioso */ }
+    } catch (_) {}
   };
 
   restoreA11y();
 
-  /* Respeitar preferência do sistema */
   if (prefersReducedMotion()) {
     STATE.reducedMotion = true;
     document.body.classList.add('reduce-motion');
@@ -931,7 +850,6 @@ const initForm = () => {
   const form = $('.cta-form');
   if (!form) return;
 
-  /* Máscara simples de telefone */
   const phoneInput = $('#form-phone');
   if (phoneInput) {
     phoneInput.addEventListener('input', (e) => {
@@ -947,7 +865,6 @@ const initForm = () => {
     });
   }
 
-  /* Validação e envio */
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -956,7 +873,6 @@ const initForm = () => {
     const treatmentEl = $('#form-treatment');
     const submitBtn   = form.querySelector('[type="submit"]');
 
-    // Limpa erros anteriores
     clearErrors(form);
 
     let valid = true;
@@ -978,21 +894,18 @@ const initForm = () => {
       return;
     }
 
-    // Estado de carregamento
     const btnSpan = submitBtn?.querySelector('span');
     const original = btnSpan?.textContent;
     if (btnSpan) btnSpan.textContent = 'Enviando...';
     submitBtn?.setAttribute('disabled', '');
     submitBtn?.setAttribute('aria-busy', 'true');
 
-    // Simula envio (substitua pela integração real)
     await simulateSubmit({
       name      : nameInput.value.trim(),
       phone     : rawPhone,
       treatment : treatmentEl?.value || '',
     });
 
-    // Sucesso
     if (btnSpan) btnSpan.textContent = '✓ Solicitação Enviada!';
     submitBtn?.removeAttribute('disabled');
     submitBtn?.removeAttribute('aria-busy');
@@ -1008,11 +921,6 @@ const initForm = () => {
   });
 };
 
-/**
- * Mostra erro de campo
- * @param {HTMLElement} input
- * @param {string} msg
- */
 const showFieldError = (input, msg) => {
   if (!input) return;
   input.setAttribute('aria-invalid', 'true');
@@ -1032,10 +940,6 @@ const showFieldError = (input, msg) => {
   input.parentNode?.appendChild(err);
 };
 
-/**
- * Limpa erros de validação
- * @param {HTMLElement} form
- */
 const clearErrors = (form) => {
   form.querySelectorAll('.field-error').forEach(el => el.remove());
   form.querySelectorAll('[aria-invalid]').forEach(el => {
@@ -1044,44 +948,19 @@ const clearErrors = (form) => {
   });
 };
 
-/**
- * Simula POST para o backend
- * Substitua pela integração real (fetch / FormData / API)
- * @param {Object} data
- * @returns {Promise}
- */
 const simulateSubmit = (data) => {
-  /* 
-    SUBSTITUIR: Integre aqui com seu backend ou serviço de e-mail.
-    Exemplo com fetch:
-    
-    return fetch('/api/agendamento', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    }).then(res => res.json());
-    
-    Ou redirecionar para WhatsApp:
-    const msg = encodeURIComponent(
-      `Olá! Sou ${data.name}, gostaria de agendar uma avaliação de ${data.treatment}.`
-    );
-    window.open(`https://wa.me/5511999999999?text=${msg}`, '_blank');
-  */
   console.info('Dados do formulário:', data);
   return new Promise(resolve => setTimeout(resolve, 1500));
 };
 
 /* ----------------------------------------------------------------
-   13. SMOOTH SCROLL — Links âncora
+   13. SMOOTH SCROLL
 ---------------------------------------------------------------- */
 const initSmoothScroll = () => {
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
       if (!href || href === '#') return;
-
-      // >>> ADICIONE ESTA LINHA <<<
-      // Ignora links dentro do modal de tratamentos (o modal cuida do scroll)
       if (link.closest('.treatments-modal')) return;
 
       const target = document.querySelector(href);
@@ -1113,24 +992,12 @@ const initFooterYear = () => {
 
 /* ----------------------------------------------------------------
    15. VIDEO TESTIMONY PLACEHOLDER
-   Abre modal de vídeo ou redireciona — placeholder para integração
 ---------------------------------------------------------------- */
 const initVideoTestimonials = () => {
   const cards = $$('.video-testimony-card');
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
-      /*
-        SUBSTITUIR: Integre aqui a reprodução real do vídeo.
-        Opções:
-        1. Abrir vídeo em modal customizado
-        2. Incorporar YouTube/Vimeo
-        3. Reproduzir arquivo local com <video>
-        
-        Exemplo de placeholder — abre URL do YouTube:
-        const videoUrl = card.dataset.videoUrl;
-        if (videoUrl) window.open(videoUrl, '_blank', 'noopener');
-      */
       const name = card.querySelector('.video-testimony-name')?.textContent || 'paciente';
       announceToSR(`Reproduzindo depoimento de ${name}`);
       showVideoPlaceholder(card);
@@ -1145,11 +1012,6 @@ const initVideoTestimonials = () => {
   });
 };
 
-/**
- * Exibe feedback visual de "vídeo em breve"
- * Remova quando integrar vídeos reais
- * @param {Element} card
- */
 const showVideoPlaceholder = (card) => {
   const existing = card.querySelector('.video-placeholder-msg');
   if (existing) { existing.remove(); return; }
@@ -1184,33 +1046,24 @@ const showVideoPlaceholder = (card) => {
 };
 
 /* ----------------------------------------------------------------
-   16. HERO VIDEO — Garante reprodução
+   16. HERO VIDEO
 ---------------------------------------------------------------- */
 const initHeroVideo = () => {
   const video = $('.hero-video');
   if (!video) return;
 
-  // Só tenta play se tiver source
   const source = video.querySelector('source[src]:not([src=""])');
   if (!source) return;
 
-  video.play().catch(() => {
-    // Silencioso — o poster serve como fallback
-  });
+  video.play().catch(() => {});
 
-  // Escala suave de entrada
   video.addEventListener('loadeddata', () => {
     video.style.scale = '1';
   });
 };
 
-
-  /* ----------------------------------------------------------------
-   TREATMENTS MODAL
----------------------------------------------------------------- */
-
 /* ----------------------------------------------------------------
-   TREATMENTS MODAL (Accordion + CTA)
+   TREATMENTS MODAL
 ---------------------------------------------------------------- */
 const initTreatmentsModal = () => {
   const modal    = $('#treatments-modal');
@@ -1220,7 +1073,6 @@ const initTreatmentsModal = () => {
 
   if (!modal || !openBtn) return;
 
-  /* ── Abre ── */
   const openModal = () => {
     modal.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';
@@ -1229,7 +1081,6 @@ const initTreatmentsModal = () => {
     announceToSR('Modal de tratamentos aberto.');
   };
 
-  /* ── Fecha e colapsa tudo ── */
   const closeModal = () => {
     modal.setAttribute('hidden', '');
     document.body.style.overflow = '';
@@ -1243,9 +1094,14 @@ const initTreatmentsModal = () => {
     announceToSR('Modal de tratamentos fechado.');
   };
 
-  /* ── Expande/Colapsa ── */
-  const expandCard  = (card) => { card.classList.add('is-expanded'); card.setAttribute('aria-expanded', 'true'); };
-  const collapseCard = (card) => { card.classList.remove('is-expanded'); card.setAttribute('aria-expanded', 'false'); };
+  const expandCard  = (card) => {
+    card.classList.add('is-expanded');
+    card.setAttribute('aria-expanded', 'true');
+  };
+  const collapseCard = (card) => {
+    card.classList.remove('is-expanded');
+    card.setAttribute('aria-expanded', 'false');
+  };
 
   const toggleCard = (card) => {
     const isExpanded = card.classList.contains('is-expanded');
@@ -1256,7 +1112,6 @@ const initTreatmentsModal = () => {
     announceToSR(isExpanded ? 'Recolhido' : 'Expandido');
   };
 
-  /* ── Rola até o CTA ── */
   const goToCTA = () => {
     closeModal();
     setTimeout(() => {
@@ -1270,7 +1125,6 @@ const initTreatmentsModal = () => {
     }, 350);
   };
 
-  /* ── Eventos básicos ── */
   openBtn.addEventListener('click', openModal);
   closeBtn?.addEventListener('click', closeModal);
   backdrop?.addEventListener('click', closeModal);
@@ -1279,22 +1133,18 @@ const initTreatmentsModal = () => {
     if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
   });
 
-  /* ── Event Delegation no Grid (A mágica acontece aqui) ── */
   const grid = modal.querySelector('.treatments-modal-grid');
 
   if (grid) {
     grid.addEventListener('click', (e) => {
-
-      // 1. Clique no link "Agendar" -> Fecha e rola
       const ctaLink = e.target.closest('.treatments-modal-cta-link');
       if (ctaLink) {
         e.preventDefault();
-        e.stopPropagation(); // Impede que outros listeners interfiram
+        e.stopPropagation();
         goToCTA();
         return;
       }
 
-      // 2. Clique no card (título/ícone/seta) -> Accordion (apenas mobile)
       if (window.innerWidth > 600) return;
 
       const card = e.target.closest('.treatment-card--modal');
@@ -1303,7 +1153,6 @@ const initTreatmentsModal = () => {
       toggleCard(card);
     });
 
-    // Suporte a teclado (Enter/Space)
     grid.addEventListener('keydown', (e) => {
       if (e.key !== 'Enter' && e.key !== ' ') return;
       if (window.innerWidth > 600) return;
@@ -1316,7 +1165,6 @@ const initTreatmentsModal = () => {
     });
   }
 
-  /* ── Trap de foco ── */
   modal.addEventListener('keydown', (e) => {
     if (e.key !== 'Tab' || modal.hasAttribute('hidden')) return;
     const focusable = [...modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])')].filter(el => !el.hasAttribute('disabled'));
@@ -1328,36 +1176,8 @@ const initTreatmentsModal = () => {
   });
 };
 
-  /* ── Links do footer do modal ── */
-  modal.querySelectorAll('.treatments-modal-footer .treatments-modal-cta-link').forEach(link => {
-    link.addEventListener('click', () => closeModal());
-  });
-
-  /* ── Trap de foco ── */
-  modal.addEventListener('keydown', (e) => {
-    if (e.key !== 'Tab' || modal.hasAttribute('hidden')) return;
-
-    const focusable = [
-      ...modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])')
-    ].filter(el => !el.hasAttribute('disabled'));
-
-    if (!focusable.length) return;
-
-    const first = focusable[0];
-    const last  = focusable[focusable.length - 1];
-
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault();
-      last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault();
-      first.focus();
-    }
-  });
-};
-
 /* ----------------------------------------------------------------
-   INIT — Ponto de entrada principal
+   INIT
 ---------------------------------------------------------------- */
 const init = () => {
   removePreload();
@@ -1377,13 +1197,8 @@ const init = () => {
   initTreatmentsModal();
 };
 
-/* ----------------------------------------------------------------
-   EXECUÇÃO
-   Aguarda DOM pronto antes de inicializar
----------------------------------------------------------------- */
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {
-  // DOM já carregado (script com defer)
   init();
 }
