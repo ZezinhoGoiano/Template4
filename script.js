@@ -1206,7 +1206,8 @@ const initHeroVideo = () => {
   });
 };
 
-/* ----------------------------------------------------------------
+
+  /* ----------------------------------------------------------------
    TREATMENTS MODAL
 ---------------------------------------------------------------- */
 const initTreatmentsModal = () => {
@@ -1226,30 +1227,50 @@ const initTreatmentsModal = () => {
     announceToSR('Modal de tratamentos aberto.');
   };
 
-  /* ── Fecha ── */
+  /* ── Fecha e colapsa todos os cards ── */
   const closeModal = () => {
     modal.setAttribute('hidden', '');
     document.body.style.overflow = '';
     document.body.classList.remove('modal-open');
+
+    /* Colapsa todos os cards ao fechar */
+    modal.querySelectorAll('.treatment-card--modal.is-expanded').forEach(c => {
+      collapseCard(c);
+    });
+
     openBtn.focus();
     announceToSR('Modal de tratamentos fechado.');
   };
 
-  /* ── Rola até o CTA ── */
-  const goToCTA = () => {
-    closeModal();
-    setTimeout(() => {
-      const ctaSection = document.querySelector('#cta');
-      if (!ctaSection) return;
-      const headerH = parseInt(
-        getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10
-      ) || 80;
-      window.scrollTo({
-        top: ctaSection.getBoundingClientRect().top + window.scrollY - headerH,
-        behavior: STATE.reducedMotion ? 'auto' : 'smooth',
-      });
-      announceToSR('Redirecionado para o formulário de agendamento.');
-    }, 350);
+  /* ── Expande um card ── */
+  const expandCard = (card) => {
+    card.classList.add('is-expanded');
+    card.setAttribute('aria-expanded', 'true');
+  };
+
+  /* ── Colapsa um card ── */
+  const collapseCard = (card) => {
+    card.classList.remove('is-expanded');
+    card.setAttribute('aria-expanded', 'false');
+  };
+
+  /* ── Toggle de um card ── */
+  const toggleCard = (card) => {
+    const isExpanded = card.classList.contains('is-expanded');
+
+    /* Colapsa todos os outros primeiro (accordion) */
+    modal.querySelectorAll('.treatment-card--modal').forEach(c => {
+      if (c !== card) collapseCard(c);
+    });
+
+    /* Toggle do atual */
+    isExpanded ? collapseCard(card) : expandCard(card);
+
+    announceToSR(
+      isExpanded
+        ? `${card.querySelector('.treatment-card-title')?.textContent} recolhido`
+        : `${card.querySelector('.treatment-card-title')?.textContent} expandido`
+    );
   };
 
   /* ── Eventos básicos ── */
@@ -1262,40 +1283,59 @@ const initTreatmentsModal = () => {
     if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
   });
 
-  /* ── Links "Saiba mais" dentro do modal fecham o modal ── */
-  modal.querySelectorAll('.treatments-modal-cta-link').forEach(link => {
-    link.addEventListener('click', () => closeModal());
-  });
-
-  /* ── Cards clicáveis — delegação no container ──
-     Usa event delegation no grid para capturar qualquer clique
-     dentro de qualquer card, independente do all:unset            */
+  /* ── Event delegation no grid ──
+     Clique na linha do card → expande/colapsa (mobile)
+     Clique no link "Agendar" → fecha modal + rola ao CTA       */
   const grid = modal.querySelector('.treatments-modal-grid');
 
   if (grid) {
     grid.addEventListener('click', (e) => {
-      /* Só age no mobile */
+
+      /* Clique no link "Agendar" — fecha modal e vai ao CTA */
+      const ctaLink = e.target.closest('.treatments-modal-cta-link');
+      if (ctaLink) {
+        e.preventDefault();
+        closeModal();
+        setTimeout(() => {
+          const ctaSection = document.querySelector('#cta');
+          if (!ctaSection) return;
+          const headerH = parseInt(
+            getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10
+          ) || 80;
+          window.scrollTo({
+            top: ctaSection.getBoundingClientRect().top + window.scrollY - headerH,
+            behavior: STATE.reducedMotion ? 'auto' : 'smooth',
+          });
+        }, 350);
+        return;
+      }
+
+      /* Clique no card (mobile) → accordion */
       if (window.innerWidth > 600) return;
 
-      /* Encontra o card mais próximo do elemento clicado */
       const card = e.target.closest('.treatment-card--modal');
       if (!card) return;
 
-      goToCTA();
+      toggleCard(card);
     });
 
-    /* Suporte a teclado nos cards */
+    /* Teclado */
     grid.addEventListener('keydown', (e) => {
-      if (window.innerWidth > 600) return;
       if (e.key !== 'Enter' && e.key !== ' ') return;
+      if (window.innerWidth > 600) return;
 
       const card = e.target.closest('.treatment-card--modal');
       if (!card) return;
 
       e.preventDefault();
-      goToCTA();
+      toggleCard(card);
     });
   }
+
+  /* ── Links do footer do modal ── */
+  modal.querySelectorAll('.treatments-modal-footer .treatments-modal-cta-link').forEach(link => {
+    link.addEventListener('click', () => closeModal());
+  });
 
   /* ── Trap de foco ── */
   modal.addEventListener('keydown', (e) => {
