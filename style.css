@@ -2443,14 +2443,26 @@ em {
   opacity: 0;
   transform: translateY(32px);
   animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  /* "both" mantém o estado final mesmo após a animação terminar
+     e o estado inicial antes de começar */
+  animation-fill-mode: both;
+  will-change: opacity, transform;
 }
+
 .delay-1 { animation-delay: 0.2s; }
 .delay-2 { animation-delay: 0.45s; }
 .delay-3 { animation-delay: 0.7s; }
 .delay-4 { animation-delay: 0.95s; }
 
 @keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Redução de movimento */
