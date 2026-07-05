@@ -2416,7 +2416,7 @@ body.no-parallax [data-parallax] { transform: none !important; }
     display: none !important;
   }
 
-  /* Seta indicativa à direita */
+    /* Seta indicativa à direita */
   .treatment-card--modal::after {
     content: '›';
     font-size: 1.4rem;
@@ -2425,6 +2425,16 @@ body.no-parallax [data-parallax] { transform: none !important; }
     flex-shrink: 0;
     margin-left: auto;
     padding-left: 0.5rem;
+    transition: transform var(--transition-base);
+  }
+
+  .treatment-card--modal:hover::after {
+    transform: translateX(4px);
+  }
+
+  /* Card inteiro clicável no mobile */
+  .treatment-card--modal {
+    cursor: pointer !important;
   }
 
   /* Footer fixo embaixo */
