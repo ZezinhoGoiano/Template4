@@ -2590,6 +2590,10 @@ body.no-parallax [data-parallax] {
     grid-template-rows: auto;
   }
 
+   .scroll-indicator {
+    display: none;
+   }
+
   .stats-grid { grid-template-columns: 1fr; }
 
   .video-testimonials-grid { grid-template-columns: 1fr; }
