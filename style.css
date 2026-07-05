@@ -1922,7 +1922,7 @@ em {
   align-items: flex-end;
   gap: 0.5rem;
   /* Transição suave ao ocultar */
-  transition: opacity var(--transition-base), pointer-events var(--transition-base);
+  transition: opacity var(--transition-base);
 }
 
 .a11y-toggle {
