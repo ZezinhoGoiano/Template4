@@ -1212,85 +1212,99 @@ const initHeroVideo = () => {
 /* ----------------------------------------------------------------
    TREATMENTS MODAL
 ---------------------------------------------------------------- */
+add('modal-open');    // ← NOVO
+/* ----------------------------------------------------------------
+   TREATMENTS MODAL
+---------------------------------------------------------------- */
 const initTreatmentsModal = () => {
-  const modal = $('#treatments-modal');
-  const openBtn = $('.treatments-modal-open');
+  const modal    = $('#treatments-modal');
+  const openBtn  = $('.treatments-modal-open');
   const closeBtn = $('.treatments-modal-close', modal);
   const backdrop = $('.treatments-modal-backdrop', modal);
-  const ctaLinks = modal ? $$('.treatments-modal-cta-link', modal) : [];
 
   if (!modal || !openBtn) return;
 
-     /* ── Cards clicáveis no mobile — fecham modal e rolam ao CTA ── */
-  const modalCards = $$('.treatment-card--modal', modal);
-
-  modalCards.forEach(card => {
-    card.addEventListener('click', () => {
-      // Só age como link no mobile (quando está em layout lista)
-      if (window.innerWidth > 600) return;
-
-      closeModal();
-
-      // Pequeno delay para o modal fechar antes de rolar
-      setTimeout(() => {
-        const ctaSection = $('#cta');
-        if (!ctaSection) return;
-
-        const headerH = parseInt(
-          getComputedStyle(document.documentElement)
-            .getPropertyValue('--header-h'), 10
-        ) || 80;
-
-        window.scrollTo({
-          top: ctaSection.getBoundingClientRect().top + window.scrollY - headerH,
-          behavior: STATE.reducedMotion ? 'auto' : 'smooth',
-        });
-
-        announceToSR('Redirecionado para o formulário de agendamento.');
-      }, 350);
-    });
-
-    // Suporte a teclado
-    card.setAttribute('tabindex', '0');
-    card.addEventListener('keydown', (e) => {
-      if (window.innerWidth > 600) return;
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        card.click();
-      }
-    });
-  });
-
+  /* ── Abre ── */
   const openModal = () => {
-  modal.removeAttribute('hidden');
-  document.body.style.overflow = 'hidden';
-  document.body.classList.add('modal-open');    // ← NOVO
-  closeBtn?.focus();
-  announceToSR('Modal de tratamentos aberto.');
-};
+    modal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');
+    closeBtn?.focus();
+    announceToSR('Modal de tratamentos aberto.');
+  };
 
-const closeModal = () => {
-  modal.setAttribute('hidden', '');
-  document.body.style.overflow = '';
-  document.body.classList.remove('modal-open'); // ← NOVO
-  openBtn.focus();
-  announceToSR('Modal de tratamentos fechado.');
-};
+  /* ── Fecha ── */
+  const closeModal = () => {
+    modal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+    document.body.classList.remove('modal-open');
+    openBtn.focus();
+    announceToSR('Modal de tratamentos fechado.');
+  };
 
+  /* ── Rola até o CTA ── */
+  const goToCTA = () => {
+    closeModal();
+    setTimeout(() => {
+      const ctaSection = document.querySelector('#cta');
+      if (!ctaSection) return;
+      const headerH = parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10
+      ) || 80;
+      window.scrollTo({
+        top: ctaSection.getBoundingClientRect().top + window.scrollY - headerH,
+        behavior: STATE.reducedMotion ? 'auto' : 'smooth',
+      });
+      announceToSR('Redirecionado para o formulário de agendamento.');
+    }, 350);
+  };
+
+  /* ── Eventos básicos ── */
   openBtn.addEventListener('click', openModal);
   closeBtn?.addEventListener('click', closeModal);
   backdrop?.addEventListener('click', closeModal);
 
-  ctaLinks.forEach(link => {
-    link.addEventListener('click', closeModal);
-  });
-
+  /* ── Escape ── */
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.hasAttribute('hidden')) {
-      closeModal();
-    }
+    if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
   });
 
+  /* ── Links "Saiba mais" dentro do modal fecham o modal ── */
+  modal.querySelectorAll('.treatments-modal-cta-link').forEach(link => {
+    link.addEventListener('click', () => closeModal());
+  });
+
+  /* ── Cards clicáveis — delegação no container ──
+     Usa event delegation no grid para capturar qualquer clique
+     dentro de qualquer card, independente do all:unset            */
+  const grid = modal.querySelector('.treatments-modal-grid');
+
+  if (grid) {
+    grid.addEventListener('click', (e) => {
+      /* Só age no mobile */
+      if (window.innerWidth > 600) return;
+
+      /* Encontra o card mais próximo do elemento clicado */
+      const card = e.target.closest('.treatment-card--modal');
+      if (!card) return;
+
+      goToCTA();
+    });
+
+    /* Suporte a teclado nos cards */
+    grid.addEventListener('keydown', (e) => {
+      if (window.innerWidth > 600) return;
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+
+      const card = e.target.closest('.treatment-card--modal');
+      if (!card) return;
+
+      e.preventDefault();
+      goToCTA();
+    });
+  }
+
+  /* ── Trap de foco ── */
   modal.addEventListener('keydown', (e) => {
     if (e.key !== 'Tab' || modal.hasAttribute('hidden')) return;
 
@@ -1301,7 +1315,7 @@ const closeModal = () => {
     if (!focusable.length) return;
 
     const first = focusable[0];
-    const last = focusable[focusable.length - 1];
+    const last  = focusable[focusable.length - 1];
 
     if (e.shiftKey && document.activeElement === first) {
       e.preventDefault();
